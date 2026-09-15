@@ -19,6 +19,8 @@ xcuserdata/
 
 # Signing / secrets — never commit
 *.p12
+*.key
+*.csr
 *.cer
 *.certSigningRequest
 *.mobileprovision
