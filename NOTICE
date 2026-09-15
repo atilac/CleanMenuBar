@@ -1,0 +1,46 @@
+CleanMenuBar
+Copyright (c) 2026 Atila Cavalcante <apps@monobit.com.br>
+
+This product includes software derived from Hidden Bar
+(https://github.com/dwarvesf/hidden), used under the MIT License.
+
+    Derived from commit 0dde4b6882144309263ac465375971a5c39b492d
+    ("docs: add committed backlog of open work", 16 June 2026),
+    the state of the main branch after the v1.10 release.
+
+Its menu structure, preference set and user-facing strings were used as the
+basis for the equivalent parts of this app. The hiding mechanism is not
+derived from it: the technique Hidden Bar uses stopped working in macOS 27,
+and CleanMenuBar's replacement was written from measurements of the new
+behaviour rather than from their source.
+
+With thanks to Dwarves Foundation and to everyone who built and maintained
+Hidden Bar over the years — Thanh Nguyen, phucld, Trung Phan, Peter Luo,
+Phuc Le Dien, Licardo and Han Ngo among them. They kept a small, focused,
+genuinely free tool alive for six years, and gave this one its shape.
+
+    MIT License
+
+    Copyright (c) 2019 Dwarves Foundation
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+No code from Ice (https://github.com/jordanbaird/Ice) was used or consulted.
+Ice is licensed under the GPL-3.0, which is incompatible with this project's
+MIT licensing.
