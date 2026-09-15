@@ -62,8 +62,23 @@ def alternates(page, depth):
     return "\n".join(out)
 
 
+def canonical(code, page):
+    """The absolute URL of this exact translation. Used for og:url and
+    rel=canonical, both of which are wrong — and actively harmful for indexing —
+    if every language claims the English URL."""
+    folder = next(f for c, _, f in LANGUAGES if c == code)
+    return f"{SITE}/{page}" if folder is None else f"{SITE}/{folder}/{page}"
+
+
 def head(t, code, page, depth, description=""):
     desc = f'<meta name="description" content="{description}">' if description else ""
+    url = canonical(code, page)
+    social = f"""<link rel="canonical" href="{url}">
+<meta property="og:title" content="{t}">
+<meta property="og:image" content="{SITE}/icon-512.png">
+<meta property="og:url" content="{url}">
+<meta property="og:type" content="website">""" + (
+        f'\n<meta property="og:description" content="{description}">' if description else "")
     return f"""<!DOCTYPE html>
 <html lang="{code}">
 <head>
@@ -71,8 +86,12 @@ def head(t, code, page, depth, description=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{t}</title>
 {desc}
+{social}
 <link rel="stylesheet" href="{rel(depth, 'style.css')}">
 <link rel="icon" href="{rel(depth, 'icon.svg')}" type="image/svg+xml">
+<link rel="icon" href="{rel(depth, 'favicon-32.png')}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{rel(depth, 'apple-touch-icon.png')}">
+<meta name="theme-color" content="#ec4899">
 {alternates(page, depth)}
 </head>
 <body>

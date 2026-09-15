@@ -1,12 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Edge to edge on purpose. The app icon keeps a 9% margin because macOS
+       expects it; a favicon should not, because browsers draw it at 16 or 32
+       pixels and the margin costs a quarter of them. Same C geometry as
+       Tools/GenerateAppIcon.swift. -->
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#ec4899"/><stop offset="1" stop-color="#be185d"/>
   </linearGradient></defs>
-  <rect x="9" y="9" width="82" height="82" rx="18.3" fill="url(#g)"/>
-  <g fill="none" stroke="#fff" stroke-width="10.25" stroke-linecap="butt">
-    <path d="M 66.69 31.46 A 23.37 23.37 0 0 0 47.30 27.21"/>
-        <path d="M 40.51 29.92 A 23.37 23.37 0 0 0 29.38 46.34"/>
-        <path d="M 29.38 53.66 A 23.37 23.37 0 0 0 40.51 70.08"/>
-        <path d="M 47.30 72.79 A 23.37 23.37 0 0 0 66.69 68.54"/>
+  <rect width="100" height="100" rx="22.37" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="12.50" stroke-linecap="butt">
+    <path d="M 70.35 27.39 A 28.50 28.50 0 0 0 46.71 22.20"/>
+    <path d="M 38.43 25.51 A 28.50 28.50 0 0 0 24.85 45.54"/>
+    <path d="M 24.85 54.46 A 28.50 28.50 0 0 0 38.43 74.49"/>
+    <path d="M 46.71 77.80 A 28.50 28.50 0 0 0 70.35 72.61"/>
   </g>
 </svg>

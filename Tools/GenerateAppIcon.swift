@@ -19,9 +19,12 @@ let slots: [(Int, String)] = [
     (512, "icon_512x512.png"),   (1024, "icon_512x512@2x.png"),
 ]
 
-func drawIcon(size: CGFloat, into context: CGContext) {
-    // macOS icons sit inside the canvas rather than filling it.
-    let inset = size * 0.09
+/// - Parameter bleed: when true the plate fills the canvas edge to edge.
+///   macOS app icons sit inside their canvas; a favicon or a touch icon should
+///   not, because the platform crops or rounds it and the margin is wasted at
+///   16 or 32 pixels.
+func drawIcon(size: CGFloat, bleed: Bool = false, into context: CGContext) {
+    let inset = bleed ? 0 : size * 0.09
     let rect = CGRect(x: inset, y: inset, width: size - inset * 2, height: size - inset * 2)
     let cornerRadius = rect.width * 0.2237  // the standard macOS squircle proportion
 
@@ -106,7 +109,7 @@ func drawIcon(size: CGFloat, into context: CGContext) {
     context.restoreGState()
 }
 
-func writeIcon(size: Int, to path: String) {
+func writeIcon(size: Int, bleed: Bool = false, to path: String) {
     let dimension = CGFloat(size)
     guard let context = CGContext(data: nil, width: size, height: size, bitsPerComponent: 8,
                                   bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
@@ -114,7 +117,7 @@ func writeIcon(size: Int, to path: String) {
     else { fatalError("could not create a \(size)px context") }
 
     context.setAllowsAntialiasing(true)
-    drawIcon(size: dimension, into: context)
+    drawIcon(size: dimension, bleed: bleed, into: context)
 
     guard let image = context.makeImage() else { fatalError("could not render \(size)px") }
     let rep = NSBitmapImageRep(cgImage: image)
@@ -128,4 +131,15 @@ func writeIcon(size: Int, to path: String) {
 for (size, name) in slots {
     writeIcon(size: size, to: "\(outputDirectory)/\(name)")
     print("wrote \(name) (\(size)px)")
+}
+
+// Web icons: same mark, drawn edge to edge.
+let webSlots: [(Int, String)] = [
+    (32, "site/favicon-32.png"),
+    (180, "site/apple-touch-icon.png"),
+    (512, "site/icon-512.png"),
+]
+for (size, path) in webSlots {
+    writeIcon(size: size, bleed: true, to: path)
+    print("wrote \(path) (\(size)px)")
 }
