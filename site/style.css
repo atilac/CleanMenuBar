@@ -1,0 +1,118 @@
+/* CleanMenuBar — monobit.com.br/cleanmenubar
+   One stylesheet, no build step, no dependencies: the site should outlive any
+   toolchain choice made today. */
+
+:root {
+  --pink: #ec4899;
+  --pink-deep: #be185d;
+  --bg: #09090b;
+  --surface: #18181b;
+  --border: #27272a;
+  --text: #fafafa;
+  --muted: #a1a1aa;
+  --radius: 14px;
+  --measure: 46rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f4f4f5;
+    --border: #e4e4e7;
+    --text: #18181b;
+    --muted: #52525b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- header ---------- */
+
+header { padding: 5rem 0 3.5rem; text-align: center; }
+
+.icon {
+  width: 104px; height: 104px;
+  border-radius: 23.4%;
+  background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+  display: grid; place-items: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 12px 32px -12px rgba(236, 72, 153, .55);
+}
+.icon svg { width: 62px; height: 62px; }
+
+h1 { font-size: 2.6rem; letter-spacing: -.03em; margin: 0 0 .4rem; }
+.tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 2rem; }
+
+/* ---------- download ---------- */
+
+.download {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+  color: #fff; text-decoration: none; font-weight: 600;
+  padding: .85rem 1.9rem; border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 24px -10px rgba(236, 72, 153, .7);
+}
+.download:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -10px rgba(236,72,153,.85); }
+.requirements { color: var(--muted); font-size: .875rem; margin-top: .9rem; }
+
+/* ---------- content ---------- */
+
+section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+h2 { font-size: 1.4rem; letter-spacing: -.02em; margin: 0 0 1rem; }
+h3 { font-size: 1.05rem; margin: 2rem 0 .5rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--pink); }
+
+.features { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); list-style: none; padding: 0; margin: 0; }
+.features li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; }
+.features strong { display: block; margin-bottom: .2rem; }
+.features span { color: var(--muted); font-size: .925rem; }
+
+ol.steps { padding-left: 1.2rem; }
+ol.steps li { margin-bottom: .6rem; }
+
+kbd {
+  background: var(--surface); border: 1px solid var(--border);
+  border-bottom-width: 2px; border-radius: 6px;
+  padding: .12em .45em; font: inherit; font-size: .9em;
+}
+
+.note { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--pink); border-radius: var(--radius); padding: 1rem 1.25rem; color: var(--muted); font-size: .925rem; }
+
+/* ---------- legal pages ---------- */
+
+.legal { padding-top: 3rem; }
+.legal h1 { font-size: 2rem; text-align: left; }
+.legal .meta { color: var(--muted); font-size: .875rem; margin-bottom: 2.5rem; }
+.legal h2 { margin-top: 2.5rem; }
+.legal ul { color: var(--muted); }
+
+/* ---------- language switcher ---------- */
+
+/* Plain links to sibling pages, not a JavaScript toggle: each translation is a
+   real URL, so it can be linked, indexed and archived on its own. */
+.lang { display: flex; gap: .45rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0 0; }
+.lang a {
+  background: var(--surface); color: var(--muted); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: .28rem .85rem; font-size: .8125rem;
+}
+.lang a:hover { color: var(--text); }
+.lang a.current { background: var(--pink); color: #fff; border-color: transparent; }
+.legal .lang { justify-content: flex-start; margin: 0 0 2.5rem; }
+
+/* ---------- footer ---------- */
+
+footer { border-top: 1px solid var(--border); padding: 2.5rem 0 4rem; color: var(--muted); font-size: .875rem; text-align: center; }
+footer nav { margin-bottom: 1rem; display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }

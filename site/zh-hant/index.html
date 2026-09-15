@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanMenuBar — 在 macOS 27 上隱藏選單列圖像</title>
+<meta name="description" content="CleanMenuBar 隱藏 macOS 選單列圖像。開源、免費、不收集任何資料。">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/index.html">
+<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/pt-br/index.html">
+<link rel="alternate" hreflang="es" href="https://monobit.com.br/cleanmenubar/es/index.html">
+<link rel="alternate" hreflang="fr" href="https://monobit.com.br/cleanmenubar/fr/index.html">
+<link rel="alternate" hreflang="de" href="https://monobit.com.br/cleanmenubar/de/index.html">
+<link rel="alternate" hreflang="ja" href="https://monobit.com.br/cleanmenubar/ja/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://monobit.com.br/cleanmenubar/zh-hans/index.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://monobit.com.br/cleanmenubar/zh-hant/index.html">
+<link rel="alternate" hreflang="ru" href="https://monobit.com.br/cleanmenubar/ru/index.html">
+<link rel="alternate" hreflang="x-default" href="https://monobit.com.br/cleanmenubar/index.html">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="icon"><svg viewBox="0 0 100 100" aria-hidden="true">
+      <!-- The same geometry Tools/GenerateAppIcon.swift draws: a C cut in three
+           places, mouth at 105 degrees against 18-degree cuts. Computed rather
+           than eyeballed — hand-written arcs did not read as a letter. No plate
+           inset here: the surrounding div is the plate. -->
+      <g fill="none" stroke="#fff" stroke-width="12.50" stroke-linecap="butt">
+        <path d="M 70.35 27.39 A 28.50 28.50 0 0 0 46.71 22.20"/>
+        <path d="M 38.43 25.51 A 28.50 28.50 0 0 0 24.85 45.54"/>
+        <path d="M 24.85 54.46 A 28.50 28.50 0 0 0 38.43 74.49"/>
+        <path d="M 46.71 77.80 A 28.50 28.50 0 0 0 70.35 72.61"/>
+      </g>
+    </svg></div>
+  <h1>CleanMenuBar</h1>
+  <p class="tagline">隱藏你不想看到的選單列圖像。</p>
+  <a class="download" href="https://github.com/atilac/CleanMenuBar/releases/latest">下載 macOS 版</a>
+  <p class="requirements">免費開源 · macOS 26 或更高 · Apple Silicon 与 Intel</p>
+  <nav class="lang"><a href="../index.html" hreflang="en" lang="en">English</a><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/index.html" hreflang="es" lang="es">Español</a><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="../zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a class="current" href="../zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
+</header>
+
+<section>
+  <h2>为什么会有它</h2>
+  <p>macOS 27 将選單列重建为單一視窗，一舉让所有隱藏圖像的 App 失效——Hidden Bar、Bartender、Ice、Thaw。它们依賴同一种技巧，而这种技巧已不復存在。</p>
+  <p>CleanMenuBar 是对该机制的全新实现，基於对 macOS 27 的實測，而非向其修補。</p>
+</section>
+
+<section>
+  <h2>功能</h2>
+  <ul class="features"><li><strong>隱藏与顯示</strong><span>點一下、全局快速鍵，或仅将指针停留其上。</span></li><li><strong>始終隱藏區域</strong><span>即使展開也保持隱藏的第二段區域。</span></li><li><strong>自动收合</strong><span>5、10、15、30 或 60 秒後。</span></li><li><strong>无需權限</strong><span>无需輔助使用，无需螢幕錄製。執行于沙箱中。</span></li><li><strong>九种語言</strong><span>繁體中文、簡體中文、英文、葡萄牙文、西班牙文、法文、德文、日文、俄文。</span></li><li><strong>不收集任何資料</strong><span>无網路、无遙測、无帳號。</span></li></ul>
+</section>
+
+<section>
+  <h2>設定步骤</h2>
+  <ol class="steps"><li>按住 <kbd>⌘</kbd>，将想隱藏的圖像拖曳至 CleanMenuBar 分隔符號的<strong>左側</strong>。</li><li>位于分隔符號<strong>右側</strong>的圖像始終保持可見。</li><li>點一下箭頭收合或展開，或在任意位置按 <kbd>⌃⌥⌘C</kbd>。</li><li>整理完成後，開啟<strong>隱藏分隔符號</strong>，螢幕上便只留下箭頭。</li></ol>
+  <p class="note">位置在重新啟動后依然保留——macOS 会記住每个圖像的位置。</p>
+</section>
+
+<section>
+  <h2>安裝</h2>
+  <p>下載 <code>.dmg</code>，将 CleanMenuBar 拖入「應用程式」，然后開啟。</p>
+  <p class="note">该 App 使用 Developer ID 簽署并经 Apple 公證，因此開啟时不会出现警告。在上架 Mac App Store 之前，上方下載是官方取得方式。</p>
+</section>
+
+<footer>
+  <nav><a href="../privacy.html">隱私</a><a href="../terms.html">使用條款</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · MIT 授權條款</p>
+</footer>
+</div>
+</body>
+</html>

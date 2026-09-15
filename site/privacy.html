@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — CleanMenuBar</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/pt-br/privacy.html">
+<link rel="alternate" hreflang="es" href="https://monobit.com.br/cleanmenubar/es/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://monobit.com.br/cleanmenubar/fr/privacy.html">
+<link rel="alternate" hreflang="de" href="https://monobit.com.br/cleanmenubar/de/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://monobit.com.br/cleanmenubar/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://monobit.com.br/cleanmenubar/zh-hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://monobit.com.br/cleanmenubar/zh-hant/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://monobit.com.br/cleanmenubar/ru/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://monobit.com.br/cleanmenubar/privacy.html">
+</head>
+<body>
+<div class="wrap">
+<div class="legal">
+  <nav class="lang"><a class="current" href="privacy.html" hreflang="en" lang="en">English</a><a href="pt-br/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="es/privacy.html" hreflang="es" lang="es">Español</a><a href="fr/privacy.html" hreflang="fr" lang="fr">Français</a><a href="de/privacy.html" hreflang="de" lang="de">Deutsch</a><a href="ja/privacy.html" hreflang="ja" lang="ja">日本語</a><a href="zh-hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="zh-hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="ru/privacy.html" hreflang="ru" lang="ru">Русский</a></nav>
+  <h1>Privacy Policy</h1>
+  <p class="meta">CleanMenuBar · Updated 2026-09-15 · Applies to all versions</p>
+
+  <h2>The short version</h2>
+  <p>CleanMenuBar collects nothing, sends nothing, and has no servers.</p>
+  <p class="note">That is not a policy choice that could quietly change — it is what the app is technically capable of. It runs inside Apple's App Sandbox <strong>with no network entitlement</strong>, so it could not open a network connection even if its code tried to.</p>
+
+  <h2>What the app stores</h2>
+  <p>Your settings — the language, the shortcut, whether auto-collapse is on and after how long — are written to macOS's standard preferences store, inside the app's own sandbox container:</p>
+  <p><code>~/Library/Containers/com.atilac.CleanMenuBar/</code></p>
+  <p>This stays on your Mac. It is not transmitted, not backed up by us, and not readable by us. Deleting the app and that folder removes everything CleanMenuBar has ever written.</p>
+  <p>macOS separately remembers where you dragged your menu bar icons. That is the system's own record, not ours, and it lives outside the app.</p>
+
+  <h2>What the app does not do</h2>
+  <ul><li>No analytics, telemetry, crash reporting or usage statistics</li><li>No accounts, logins or identifiers</li><li>No advertising, and no data shared with anyone</li><li>No network requests of any kind</li><li>No access to your files, contacts, camera, microphone or location</li></ul>
+
+  <h2>Permissions</h2>
+  <p>CleanMenuBar requests <strong>no</strong> special permissions. It needs neither Accessibility nor Screen Recording, which sets it apart from most menu bar tools — the global shortcut uses an API that works without them, and the app never reads the screen.</p>
+  <p>If macOS ever prompts you for a permission on CleanMenuBar's behalf, treat that as a bug and report it.</p>
+
+  <h2>Children</h2>
+  <p>CleanMenuBar is not directed at children and collects no data from anyone, regardless of age.</p>
+
+  <h2>The source is public</h2>
+  <p>You do not have to take any of this on trust. The complete source is published under the MIT Licence, including the entitlements file that declares what the app is allowed to do. <a href="https://github.com/atilac/CleanMenuBar">github.com/atilac/CleanMenuBar</a></p>
+
+  <h2>Changes</h2>
+  <p>If this policy ever changes, the revised version will be published here with a new date. Since the app collects nothing, any change that mattered would require a new release — and the source diff would show it.</p>
+
+  <h2>Contact</h2>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA)<br><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></p>
+</div>
+<footer>
+  <nav><a href="index.html">Home</a><a href="terms.html">Terms of Use</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · MIT License</p>
+</footer>
+</div>
+</body>
+</html>

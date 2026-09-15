@@ -10,8 +10,8 @@ Kept here so the answers stay consistent between submissions.
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
 | Team ID | NP9YTUN8LD |
 | Bundle ID | com.atilac.CleanMenuBar |
-| Support URL | https://monobit.com.br/CleanMenuBar |
-| Privacy Policy URL | https://monobit.com.br/CleanMenuBar/privacy |
+| Support URL | https://monobit.com.br/cleanmenubar |
+| Privacy Policy URL | https://monobit.com.br/cleanmenubar/privacy.html |
 | Category | Utilities |
 | Price | Free |
 

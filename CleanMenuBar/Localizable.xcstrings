@@ -4233,61 +4233,61 @@
         }
       }
     },
-    "monobit.com.br/CleanMenuBar": {
+    "monobit.com.br/cleanmenubar": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "monobit.com.br/CleanMenuBar"
+            "value": "monobit.com.br/cleanmenubar"
           }
         }
       }

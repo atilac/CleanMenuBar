@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanMenuBar — masquer les icônes de la barre des menus sur macOS 27</title>
+<meta name="description" content="CleanMenuBar masque les icônes de votre barre des menus macOS. Open source, gratuit, ne collecte rien.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/index.html">
+<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/pt-br/index.html">
+<link rel="alternate" hreflang="es" href="https://monobit.com.br/cleanmenubar/es/index.html">
+<link rel="alternate" hreflang="fr" href="https://monobit.com.br/cleanmenubar/fr/index.html">
+<link rel="alternate" hreflang="de" href="https://monobit.com.br/cleanmenubar/de/index.html">
+<link rel="alternate" hreflang="ja" href="https://monobit.com.br/cleanmenubar/ja/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://monobit.com.br/cleanmenubar/zh-hans/index.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://monobit.com.br/cleanmenubar/zh-hant/index.html">
+<link rel="alternate" hreflang="ru" href="https://monobit.com.br/cleanmenubar/ru/index.html">
+<link rel="alternate" hreflang="x-default" href="https://monobit.com.br/cleanmenubar/index.html">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="icon"><svg viewBox="0 0 100 100" aria-hidden="true">
+      <!-- The same geometry Tools/GenerateAppIcon.swift draws: a C cut in three
+           places, mouth at 105 degrees against 18-degree cuts. Computed rather
+           than eyeballed — hand-written arcs did not read as a letter. No plate
+           inset here: the surrounding div is the plate. -->
+      <g fill="none" stroke="#fff" stroke-width="12.50" stroke-linecap="butt">
+        <path d="M 70.35 27.39 A 28.50 28.50 0 0 0 46.71 22.20"/>
+        <path d="M 38.43 25.51 A 28.50 28.50 0 0 0 24.85 45.54"/>
+        <path d="M 24.85 54.46 A 28.50 28.50 0 0 0 38.43 74.49"/>
+        <path d="M 46.71 77.80 A 28.50 28.50 0 0 0 70.35 72.61"/>
+      </g>
+    </svg></div>
+  <h1>CleanMenuBar</h1>
+  <p class="tagline">Masquez les icônes de la barre des menus que vous ne voulez pas voir.</p>
+  <a class="download" href="https://github.com/atilac/CleanMenuBar/releases/latest">Télécharger pour macOS</a>
+  <p class="requirements">Gratuit et open source · macOS 26 ou ultérieur · Apple Silicon et Intel</p>
+  <nav class="lang"><a href="../index.html" hreflang="en" lang="en">English</a><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/index.html" hreflang="es" lang="es">Español</a><a class="current" href="../fr/index.html" hreflang="fr" lang="fr">Français</a><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="../zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
+</header>
+
+<section>
+  <h2>Pourquoi il existe</h2>
+  <p>macOS 27 a reconstruit la barre des menus en une seule fenêtre et a cassé d'un coup toutes les apps qui masquaient des icônes — Hidden Bar, Bartender, Ice, Thaw. Toutes reposaient sur la même astuce, et cette astuce a disparu.</p>
+  <p>CleanMenuBar est une nouvelle implémentation du mécanisme, mesurée face à macOS 27 plutôt que rafistolée pour lui.</p>
+</section>
+
+<section>
+  <h2>Ce qu'il fait</h2>
+  <ul class="features"><li><strong>Masquer et afficher</strong><span>Un clic, un raccourci global, ou simplement le survol.</span></li><li><strong>Section toujours masquée</strong><span>Une seconde zone qui reste masquée même dépliée.</span></li><li><strong>Repli automatique</strong><span>Après 5, 10, 15, 30 ou 60 secondes.</span></li><li><strong>Aucune autorisation</strong><span>Ni Accessibilité ni Enregistrement de l'écran. Fonctionne en bac à sable.</span></li><li><strong>Neuf langues</strong><span>Français, anglais, portugais, espagnol, allemand, japonais, chinois et russe.</span></li><li><strong>Ne collecte rien</strong><span>Pas de réseau, pas de télémétrie, pas de comptes.</span></li></ul>
+</section>
+
+<section>
+  <h2>Mise en route</h2>
+  <ol class="steps"><li>Maintenez <kbd>⌘</kbd> et faites glisser les icônes à masquer pour les placer à <strong>gauche</strong> du séparateur CleanMenuBar.</li><li>Tout ce qui se trouve à <strong>droite</strong> du séparateur reste toujours visible.</li><li>Cliquez sur la flèche pour replier ou déplier, ou appuyez sur <kbd>⌃⌥⌘C</kbd> depuis n'importe où.</li><li>Une fois tout en place, activez <strong>Masquer les séparateurs</strong> pour ne laisser que la flèche.</li></ol>
+  <p class="note">Les positions survivent au redémarrage : macOS retient où chaque icône se trouve.</p>
+</section>
+
+<section>
+  <h2>Installation</h2>
+  <p>Téléchargez le <code>.dmg</code>, glissez CleanMenuBar dans Applications, puis ouvrez-le.</p>
+  <p class="note">L'app est signée avec un Developer ID et notarisée par Apple : elle s'ouvre sans avertissement. En attendant le Mac App Store, le téléchargement ci-dessus est la voie officielle.</p>
+</section>
+
+<footer>
+  <nav><a href="../privacy.html">Confidentialité</a><a href="../terms.html">Conditions d'utilisation</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · Licence MIT</p>
+</footer>
+</div>
+</body>
+</html>

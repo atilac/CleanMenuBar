@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanMenuBar — Menüleistensymbole unter macOS 27 ausblenden</title>
+<meta name="description" content="CleanMenuBar blendet Symbole in der macOS-Menüleiste aus. Open Source, kostenlos, sammelt nichts.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/index.html">
+<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/pt-br/index.html">
+<link rel="alternate" hreflang="es" href="https://monobit.com.br/cleanmenubar/es/index.html">
+<link rel="alternate" hreflang="fr" href="https://monobit.com.br/cleanmenubar/fr/index.html">
+<link rel="alternate" hreflang="de" href="https://monobit.com.br/cleanmenubar/de/index.html">
+<link rel="alternate" hreflang="ja" href="https://monobit.com.br/cleanmenubar/ja/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://monobit.com.br/cleanmenubar/zh-hans/index.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://monobit.com.br/cleanmenubar/zh-hant/index.html">
+<link rel="alternate" hreflang="ru" href="https://monobit.com.br/cleanmenubar/ru/index.html">
+<link rel="alternate" hreflang="x-default" href="https://monobit.com.br/cleanmenubar/index.html">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="icon"><svg viewBox="0 0 100 100" aria-hidden="true">
+      <!-- The same geometry Tools/GenerateAppIcon.swift draws: a C cut in three
+           places, mouth at 105 degrees against 18-degree cuts. Computed rather
+           than eyeballed — hand-written arcs did not read as a letter. No plate
+           inset here: the surrounding div is the plate. -->
+      <g fill="none" stroke="#fff" stroke-width="12.50" stroke-linecap="butt">
+        <path d="M 70.35 27.39 A 28.50 28.50 0 0 0 46.71 22.20"/>
+        <path d="M 38.43 25.51 A 28.50 28.50 0 0 0 24.85 45.54"/>
+        <path d="M 24.85 54.46 A 28.50 28.50 0 0 0 38.43 74.49"/>
+        <path d="M 46.71 77.80 A 28.50 28.50 0 0 0 70.35 72.61"/>
+      </g>
+    </svg></div>
+  <h1>CleanMenuBar</h1>
+  <p class="tagline">Blenden Sie die Menüleistensymbole aus, die Sie nicht sehen möchten.</p>
+  <a class="download" href="https://github.com/atilac/CleanMenuBar/releases/latest">Für macOS laden</a>
+  <p class="requirements">Kostenlos und Open Source · macOS 26 oder neuer · Apple Silicon und Intel</p>
+  <nav class="lang"><a href="../index.html" hreflang="en" lang="en">English</a><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/index.html" hreflang="es" lang="es">Español</a><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a><a class="current" href="../de/index.html" hreflang="de" lang="de">Deutsch</a><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="../zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
+</header>
+
+<section>
+  <h2>Warum es das gibt</h2>
+  <p>macOS 27 hat die Menüleiste als einzelnes Fenster neu aufgebaut und damit auf einen Schlag jede App zerstört, die Symbole ausblendete — Hidden Bar, Bartender, Ice, Thaw. Alle stützten sich auf denselben Trick, und diesen Trick gibt es nicht mehr.</p>
+  <p>CleanMenuBar ist eine neue Umsetzung des Mechanismus, an macOS 27 gemessen statt darauf zurechtgeflickt.</p>
+</section>
+
+<section>
+  <h2>Was es kann</h2>
+  <ul class="features"><li><strong>Aus- und einblenden</strong><span>Ein Klick, ein globaler Kurzbefehl oder einfach der Mauszeiger.</span></li><li><strong>Immer ausgeblendeter Bereich</strong><span>Ein zweiter Abschnitt, der auch beim Ausklappen verborgen bleibt.</span></li><li><strong>Automatisches Einklappen</strong><span>Nach 5, 10, 15, 30 oder 60 Sekunden.</span></li><li><strong>Keine Berechtigungen</strong><span>Keine Bedienungshilfen, keine Bildschirmaufnahme. Läuft in der Sandbox.</span></li><li><strong>Neun Sprachen</strong><span>Deutsch, Englisch, Portugiesisch, Spanisch, Französisch, Japanisch, Chinesisch und Russisch.</span></li><li><strong>Sammelt nichts</strong><span>Kein Netzwerk, keine Telemetrie, keine Konten.</span></li></ul>
+</section>
+
+<section>
+  <h2>Einrichtung</h2>
+  <ol class="steps"><li>Halten Sie <kbd>⌘</kbd> gedrückt und ziehen Sie die auszublendenden Symbole <strong>links</strong> neben den CleanMenuBar-Trenner.</li><li>Alles <strong>rechts</strong> vom Trenner bleibt dauerhaft sichtbar.</li><li>Klicken Sie auf den Pfeil zum Ein- oder Ausklappen, oder drücken Sie überall <kbd>⌃⌥⌘C</kbd>.</li><li>Wenn alles angeordnet ist, aktivieren Sie <strong>Trenner ausblenden</strong>, sodass nur der Pfeil bleibt.</li></ol>
+  <p class="note">Die Positionen überstehen einen Neustart — macOS merkt sich, wo jedes Symbol sitzt.</p>
+</section>
+
+<section>
+  <h2>Installation</h2>
+  <p>Laden Sie das <code>.dmg</code>, ziehen Sie CleanMenuBar in „Programme“ und öffnen Sie es.</p>
+  <p class="note">Die App ist mit einer Developer ID signiert und von Apple notarisiert, öffnet also ohne Warnungen. Bis sie im Mac App Store ist, ist der Download oben der offizielle Weg.</p>
+</section>
+
+<footer>
+  <nav><a href="../privacy.html">Datenschutz</a><a href="../terms.html">Nutzungsbedingungen</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · MIT-Lizenz</p>
+</footer>
+</div>
+</body>
+</html>

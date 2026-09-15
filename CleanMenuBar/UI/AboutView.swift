@@ -48,8 +48,8 @@ struct AboutView: View {
                     VStack(spacing: 3) {
                         Text(copyright)
                         Text("Released under the MIT License.")
-                        Link("monobit.com.br/CleanMenuBar",
-                             destination: URL(string: "https://monobit.com.br/CleanMenuBar")!)
+                        Link("monobit.com.br/cleanmenubar",
+                             destination: URL(string: "https://monobit.com.br/cleanmenubar")!)
                             // Explicit, because the surrounding block is
                             // .secondary and would otherwise grey the link out.
                             .foregroundStyle(Color.accentColor)
