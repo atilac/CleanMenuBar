@@ -59,25 +59,41 @@ jobs:
           security find-identity -v -p codesigning "$KEYCHAIN" | grep -q "Developer ID Application" \
             || { echo "::error::certificate imported but not valid for signing"; exit 1; }
 
-      - name: Build
+      - name: Archive and export
         env:
           TEAM_ID: ${{ secrets.TEAM_ID }}
         run: |
           set -o pipefail
-          if [ -n "$TEAM_ID" ]; then
-            xcodebuild -project CleanMenuBar.xcodeproj -scheme CleanMenuBar \
-                       -configuration Release -derivedDataPath build \
-                       DEVELOPMENT_TEAM="$TEAM_ID" \
-                       CODE_SIGN_IDENTITY="Developer ID Application" \
-                       CODE_SIGN_STYLE=Manual \
-                       build
-          else
-            echo "::warning::No TEAM_ID secret — building ad-hoc signed. Gatekeeper will block this for anyone who downloads it."
-            xcodebuild -project CleanMenuBar.xcodeproj -scheme CleanMenuBar \
-                       -configuration Release -derivedDataPath build \
-                       CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO \
-                       build
+          if [ -z "$TEAM_ID" ]; then
+            echo "::error::No TEAM_ID secret. A release without a Developer ID is blocked by Gatekeeper on every machine but the one that built it."
+            exit 1
           fi
+
+          xcodebuild -project CleanMenuBar.xcodeproj -scheme CleanMenuBar \
+                     -configuration Release \
+                     -archivePath build/CleanMenuBar.xcarchive \
+                     DEVELOPMENT_TEAM="$TEAM_ID" \
+                     archive
+
+          # Export rather than build: `xcodebuild build` leaves
+          # com.apple.security.get-task-allow in the entitlements even for
+          # Release, and notarisation rejects any binary carrying it. Exporting
+          # through an archive is what strips it.
+          xcodebuild -exportArchive \
+                     -archivePath build/CleanMenuBar.xcarchive \
+                     -exportOptionsPlist ExportOptions.plist \
+                     -exportPath dist-app
+
+          if codesign -d --entitlements :- dist-app/CleanMenuBar.app 2>/dev/null | grep -q get-task-allow; then
+            echo "::error::get-task-allow survived the export; notarisation would reject this"
+            exit 1
+          fi
+
+          # The MIT licence requires these to travel with every copy.
+          for f in LICENSE NOTICE; do
+            test -f "dist-app/CleanMenuBar.app/Contents/Resources/$f" \
+              || { echo "::error::$f missing from the bundle"; exit 1; }
+          done
 
       - name: Notarize
         if: env.NOTARY_KEY_ID != ''
@@ -87,26 +103,24 @@ jobs:
           NOTARY_KEY_P8: ${{ secrets.NOTARY_KEY_P8 }}
         run: |
           echo "$NOTARY_KEY_P8" | base64 --decode > $RUNNER_TEMP/key.p8
-          ditto -c -k --keepParent build/Build/Products/Release/CleanMenuBar.app \
-                $RUNNER_TEMP/notarize.zip
+          ditto -c -k --keepParent dist-app/CleanMenuBar.app $RUNNER_TEMP/notarize.zip
           xcrun notarytool submit $RUNNER_TEMP/notarize.zip \
                 --key $RUNNER_TEMP/key.p8 \
                 --key-id "$NOTARY_KEY_ID" \
                 --issuer "$NOTARY_ISSUER_ID" \
                 --wait
           # Stapling lets the app open without a network round-trip on first launch.
-          xcrun stapler staple build/Build/Products/Release/CleanMenuBar.app
+          xcrun stapler staple dist-app/CleanMenuBar.app
           rm $RUNNER_TEMP/key.p8
 
       - name: Package
         run: |
           mkdir -p dist staging
-          cp -R build/Build/Products/Release/CleanMenuBar.app staging/
+          cp -R dist-app/CleanMenuBar.app staging/
           ln -s /Applications staging/Applications
           hdiutil create -volname CleanMenuBar -srcfolder staging -ov -format UDZO \
                          dist/CleanMenuBar.dmg
-          ditto -c -k --keepParent build/Build/Products/Release/CleanMenuBar.app \
-                dist/CleanMenuBar.zip
+          ditto -c -k --keepParent dist-app/CleanMenuBar.app dist/CleanMenuBar.zip
           shasum -a 256 dist/* > dist/SHA256SUMS.txt
           cat dist/SHA256SUMS.txt
 

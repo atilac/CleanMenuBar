@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA0000000000000000000013 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000011 /* LICENSE */; };
+		AA0000000000000000000014 /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* NOTICE */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		AA0000000000000000000011 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AA0000000000000000000012 /* NOTICE */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTICE; sourceTree = "<group>"; };
 		AA0000000000000000000005 /* CleanMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,6 +36,8 @@
 			isa = PBXGroup;
 			children = (
 				AA0000000000000000000006 /* CleanMenuBar */,
+				AA0000000000000000000011 /* LICENSE */,
+				AA0000000000000000000012 /* NOTICE */,
 				AA0000000000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +122,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0000000000000000000013 /* LICENSE in Resources */,
+				AA0000000000000000000014 /* NOTICE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +214,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Atila Cavalcante (apps@monobit.com.br). MIT License.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA). MIT License.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -230,8 +242,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Atila Cavalcante (apps@monobit.com.br). MIT License.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA). MIT License.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

@@ -172,6 +172,24 @@ but the design it replaces was theirs first.
 No code from [Ice](https://github.com/jordanbaird/Ice) was used or consulted —
 Ice is GPL-3.0, which is incompatible with this project's MIT licensing.
 
+## Privacy
+
+CleanMenuBar collects nothing and has no network entitlement, so it cannot
+transmit anything even if its code tried to. Settings stay in its own sandbox
+container. Full policy: [PRIVACY.md](PRIVACY.md), published at
+https://monobit.com.br/CleanMenuBar/privacy
+
+## Warranty
+
+None. As the MIT licence puts it, the software is provided "as is", without
+warranty of any kind, and the authors are not liable for any claim or damage
+arising from it. The full text ships inside the app — see **About → Licenses** —
+as well as in [LICENSE](LICENSE).
+
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE) — Copyright (c) 2026 MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA).
+
+The app bundle carries both `LICENSE` and `NOTICE` in `Contents/Resources`, so
+every copy distributed satisfies the attribution both this project and Hidden
+Bar require.

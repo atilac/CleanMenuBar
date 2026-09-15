@@ -15,6 +15,16 @@ struct AboutView: View {
         Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String ?? ""
     }
 
+    /// Opens the licence texts that ship inside the bundle, so the full notice is
+    /// reachable from the app rather than only from the repository.
+    private func openBundledLicences() {
+        for name in ["NOTICE", "LICENSE"] {
+            if let url = Bundle.main.url(forResource: name, withExtension: nil) {
+                NSWorkspace.shared.open(url)
+            }
+        }
+    }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
@@ -38,8 +48,8 @@ struct AboutView: View {
                     VStack(spacing: 3) {
                         Text(copyright)
                         Text("Released under the MIT License.")
-                        Link("github.com/atilac/CleanMenuBar",
-                             destination: URL(string: "https://github.com/atilac/CleanMenuBar")!)
+                        Link("monobit.com.br/CleanMenuBar",
+                             destination: URL(string: "https://monobit.com.br/CleanMenuBar")!)
                             // Explicit, because the surrounding block is
                             // .secondary and would otherwise grey the link out.
                             .foregroundStyle(Color.accentColor)
@@ -64,11 +74,21 @@ struct AboutView: View {
                     Text("The hiding mechanism here had to be rewritten: macOS 27 removed the behaviour every menu bar app depended on. That part is new; the design it replaces was theirs first.")
                         .foregroundStyle(.secondary)
 
-                    Link("github.com/dwarvesf/hidden",
-                         destination: URL(string: "https://github.com/dwarvesf/hidden")!)
-                        .font(.callout)
-                        .fontWeight(.bold)
+                    // The MIT licence asks for the copyright notice itself, not a
+                    // mention of the project — so it is reproduced verbatim.
+                    Text(verbatim: "Copyright (c) 2019 Dwarves Foundation")
+                        .font(.caption)
                         .foregroundStyle(.secondary)
+
+                    HStack(spacing: 12) {
+                        Link("github.com/dwarvesf/hidden",
+                             destination: URL(string: "https://github.com/dwarvesf/hidden")!)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.secondary)
+                        Button("Licenses") { openBundledLicences() }
+                            .buttonStyle(.link)
+                    }
+                    .font(.callout)
                 }
                 .font(.callout)
                 .frame(maxWidth: .infinity, alignment: .leading)

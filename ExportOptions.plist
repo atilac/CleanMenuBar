@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Distribution outside the Mac App Store. Exporting this way is what strips
+	     com.apple.security.get-task-allow: a plain `xcodebuild build` leaves it in
+	     even for Release, and notarisation rejects any binary that carries it. -->
+	<key>method</key>
+	<string>developer-id</string>
+	<key>teamID</key>
+	<string>NP9YTUN8LD</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>signingCertificate</key>
+	<string>Developer ID Application</string>
+	<!-- Notarisation is a separate step in the workflow, so that the upload can be
+	     skipped when the API key is not configured. -->
+	<key>destination</key>
+	<string>export</string>
+</dict>
+</plist>
