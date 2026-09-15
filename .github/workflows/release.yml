@@ -1,0 +1,96 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build, sign and publish
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.app
+
+      # Signing is optional so the workflow still produces something useful
+      # before the Developer ID is in place. Unsigned builds are marked as such
+      # in the release notes rather than pretending to be distributable.
+      - name: Import signing certificate
+        if: env.CERTIFICATE_P12 != ''
+        env:
+          CERTIFICATE_P12: ${{ secrets.CERTIFICATE_P12 }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+        run: |
+          KEYCHAIN=$RUNNER_TEMP/build.keychain
+          security create-keychain -p "" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "" "$KEYCHAIN"
+          echo "$CERTIFICATE_P12" | base64 --decode > $RUNNER_TEMP/cert.p12
+          security import $RUNNER_TEMP/cert.p12 -k "$KEYCHAIN" -P "$CERTIFICATE_PASSWORD" \
+                          -T /usr/bin/codesign
+          security list-keychain -d user -s "$KEYCHAIN" login.keychain
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+          rm $RUNNER_TEMP/cert.p12
+
+      - name: Build
+        env:
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+        run: |
+          set -o pipefail
+          if [ -n "$TEAM_ID" ]; then
+            xcodebuild -project CleanMenuBar.xcodeproj -scheme CleanMenuBar \
+                       -configuration Release -derivedDataPath build \
+                       DEVELOPMENT_TEAM="$TEAM_ID" \
+                       CODE_SIGN_IDENTITY="Developer ID Application" \
+                       CODE_SIGN_STYLE=Manual \
+                       build
+          else
+            echo "::warning::No TEAM_ID secret — building ad-hoc signed. Gatekeeper will block this for anyone who downloads it."
+            xcodebuild -project CleanMenuBar.xcodeproj -scheme CleanMenuBar \
+                       -configuration Release -derivedDataPath build \
+                       CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO \
+                       build
+          fi
+
+      - name: Notarize
+        if: env.NOTARY_KEY_ID != ''
+        env:
+          NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
+          NOTARY_ISSUER_ID: ${{ secrets.NOTARY_ISSUER_ID }}
+          NOTARY_KEY_P8: ${{ secrets.NOTARY_KEY_P8 }}
+        run: |
+          echo "$NOTARY_KEY_P8" | base64 --decode > $RUNNER_TEMP/key.p8
+          ditto -c -k --keepParent build/Build/Products/Release/CleanMenuBar.app \
+                $RUNNER_TEMP/notarize.zip
+          xcrun notarytool submit $RUNNER_TEMP/notarize.zip \
+                --key $RUNNER_TEMP/key.p8 \
+                --key-id "$NOTARY_KEY_ID" \
+                --issuer "$NOTARY_ISSUER_ID" \
+                --wait
+          # Stapling lets the app open without a network round-trip on first launch.
+          xcrun stapler staple build/Build/Products/Release/CleanMenuBar.app
+          rm $RUNNER_TEMP/key.p8
+
+      - name: Package
+        run: |
+          mkdir -p dist staging
+          cp -R build/Build/Products/Release/CleanMenuBar.app staging/
+          ln -s /Applications staging/Applications
+          hdiutil create -volname CleanMenuBar -srcfolder staging -ov -format UDZO \
+                         dist/CleanMenuBar.dmg
+          ditto -c -k --keepParent build/Build/Products/Release/CleanMenuBar.app \
+                dist/CleanMenuBar.zip
+          shasum -a 256 dist/* > dist/SHA256SUMS.txt
+          cat dist/SHA256SUMS.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+          draft: true

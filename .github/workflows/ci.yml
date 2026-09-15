@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.app
+
+      - name: Build
+        run: |
+          set -o pipefail
+          xcodebuild -project CleanMenuBar.xcodeproj \
+                     -scheme CleanMenuBar \
+                     -configuration Release \
+                     -derivedDataPath build \
+                     CODE_SIGN_IDENTITY=- \
+                     CODE_SIGNING_REQUIRED=NO \
+                     build
+
+      - name: Check the app launches and installs its status items
+        run: |
+          APP=build/Build/Products/Release/CleanMenuBar.app
+          "$APP/Contents/MacOS/CleanMenuBar" > run.log 2>&1 &
+          PID=$!
+          sleep 5
+          kill -USR2 $PID
+          sleep 2
+          kill $PID 2>/dev/null || true
+          echo "--- diagnostics ---"
+          cat run.log
+          # The app is useless if the pusher never reaches its shove length.
+          grep -q "shoveLength=" run.log || { echo "no diagnostics: the app did not start"; exit 1; }
+
+  localization:
+    name: Localization
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Every string is translated into every language
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          catalog = json.load(open("CleanMenuBar/Localizable.xcstrings", encoding="utf-8"))
+          languages = {"en", "pt-BR", "es-ES", "fr", "de", "ja", "zh-Hans", "zh-Hant", "ru"}
+          gaps = {k: sorted(languages - set(v["localizations"]))
+                  for k, v in catalog["strings"].items()
+                  if languages - set(v["localizations"])}
+          for key, missing in gaps.items():
+              print(f"missing {missing}: {key[:70]}")
+          print(f"{len(catalog['strings'])} keys x {len(languages)} languages")
+          sys.exit(1 if gaps else 0)
+          PY
+
+      - name: The language picker offers exactly what the bundle ships
+        run: |
+          python3 - <<'PY'
+          import json, re, sys
+          # A language can be translated but unreachable if nobody adds it to the
+          # picker's enum — which is exactly what happened once, silently.
+          source = open("CleanMenuBar/Core/AppLanguage.swift", encoding="utf-8").read()
+          picker = set(re.findall(r'case \w+ = "([\w-]+)"', source))
+          catalog = json.load(open("CleanMenuBar/Localizable.xcstrings", encoding="utf-8"))
+          translated = set()
+          for entry in catalog["strings"].values():
+              translated |= set(entry["localizations"])
+          missing = translated - picker - {"en"} | (picker - translated)
+          print("picker:    ", sorted(picker))
+          print("translated:", sorted(translated))
+          if missing:
+              print("out of sync:", sorted(missing))
+          sys.exit(1 if missing else 0)
+          PY
+
+      - name: No UI string opts out of localisation
+        run: |
+          # Both of these compile, run, and quietly stay in English — which has
+          # happened three times in this project. Scoped to UI/ and to the two
+          # exact shapes, so it never cries wolf: a check nobody trusts is worse
+          # than no check.
+          failed=0
+
+          # Text("a " + "b") picks Text(String), which is verbatim, not a key.
+          if grep -rnE '^\s*\+ "' CleanMenuBar/UI --include="*.swift"; then
+            echo "^ concatenated literal: join it into one literal so it can be extracted"
+            failed=1
+          fi
+
+          # Text(.init(someString)) builds the key at runtime, too late to extract.
+          if grep -rn 'Text(.init(' CleanMenuBar --include="*.swift"; then
+            echo "^ runtime-built key: take a LocalizedStringKey parameter instead"
+            failed=1
+          fi
+
+          exit $failed
