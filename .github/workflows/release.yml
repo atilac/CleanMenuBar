@@ -15,8 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_26.app
+      # Pick whatever the newest installed Xcode is, rather than pinning a path.
+      # Runner images rename and renumber these without notice, and a hard-coded
+      # /Applications/Xcode_26.app is a build break waiting for the next refresh.
+      - name: Select the newest Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
 
       # Signing is optional so the workflow still produces something useful
       # before the Developer ID is in place. Unsigned builds are marked as such
