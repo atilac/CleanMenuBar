@@ -10,15 +10,41 @@ Kept here so the answers stay consistent between submissions.
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
 | Team ID | NP9YTUN8LD |
 | Bundle ID | com.atilac.CleanMenuBar |
-| Support URL | https://monobit.com.br/cleanmenubar/en/ |
-| Privacy Policy URL | https://monobit.com.br/cleanmenubar/en/privacy.html |
+| **Primary language** | **English (U.S.)** |
 | Category | Utilities |
 | Price | Free |
 
-The English URLs are deliberate: the site's root is Portuguese, and review is
-conducted in English. App Store Connect accepts a different privacy URL per
-localisation, so each locale can point at its own translation — `/privacy.html`
-for pt-BR, `/es/privacy.html` for Spanish, and so on.
+### URLs
+
+Review is conducted in English, so everything a reviewer opens has to resolve to
+English. The site's root is Portuguese — these all carry the `/en/` prefix on
+purpose, and none of them should be shortened.
+
+| Field | URL |
+|---|---|
+| Support URL | https://monobit.com.br/cleanmenubar/en/ |
+| Marketing URL | https://monobit.com.br/cleanmenubar/en/ |
+| Privacy Policy URL | https://monobit.com.br/cleanmenubar/en/privacy.html |
+| Terms of Use (EULA) | https://monobit.com.br/cleanmenubar/en/terms.html |
+
+**Primary language must be English (U.S.)**, not Portuguese. It decides which
+listing a reviewer reads and which one users see when their own locale has no
+translation. Portuguese, Spanish and the rest are added afterwards as additional
+localisations, each of which can carry its own URLs:
+
+| Locale | Privacy | Support |
+|---|---|---|
+| pt-BR | `/privacy.html` | `/` |
+| es | `/es/privacy.html` | `/es/` |
+| fr, de, ja, zh-Hans, zh-Hant, ru | `/<code>/privacy.html` | `/<code>/` |
+
+### End User Licence Agreement
+
+Apple's standard EULA applies unless a custom one is supplied. It is sufficient
+here: the app is free, collects nothing, and the MIT licence — which ships
+inside the bundle at **About → Licenses** — already disclaims warranty and
+liability. The Terms of Use page above is published for users rather than
+required by Apple; link it only if App Store Connect asks for a custom EULA.
 
 ## App Privacy questionnaire
 
@@ -79,6 +105,11 @@ reviewer who does not know the setup step may conclude it does nothing:
 >
 > The app requires no permissions, makes no network requests, and collects no
 > data. Source: https://github.com/atilac/CleanMenuBar
+>
+> CleanMenuBar ships in nine languages and follows the system language at
+> launch, so it will appear in English on an English test system. If you need to
+> see another language, Settings › General › Language lets you pick one; the app
+> restarts to apply it.
 
 ## What still has to be decided
 

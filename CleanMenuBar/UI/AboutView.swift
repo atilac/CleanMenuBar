@@ -11,6 +11,20 @@ struct AboutView: View {
         return "\(short) (\(build))"
     }
 
+    /// The site page matching the language the app is running in.
+    ///
+    /// The site's root is Portuguese, so linking to it from an app running in
+    /// English — or Japanese — would drop the reader into a language they did not
+    /// choose. An App Store reviewer following this link is the case that matters
+    /// most: review happens in English.
+    private var siteURL: URL {
+        let folders = ["pt-BR": "", "en": "en/", "es": "es/", "fr": "fr/", "de": "de/",
+                       "ja": "ja/", "zh-Hans": "zh-hans/", "zh-Hant": "zh-hant/", "ru": "ru/"]
+        let current = Bundle.main.preferredLocalizations.first ?? "en"
+        let folder = folders[current] ?? "en/"
+        return URL(string: "https://monobit.com.br/cleanmenubar/\(folder)")!
+    }
+
     private var copyright: String {
         Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String ?? ""
     }
@@ -48,8 +62,7 @@ struct AboutView: View {
                     VStack(spacing: 3) {
                         Text(copyright)
                         Text("Released under the MIT License.")
-                        Link("monobit.com.br/cleanmenubar",
-                             destination: URL(string: "https://monobit.com.br/cleanmenubar")!)
+                        Link("monobit.com.br/cleanmenubar", destination: siteURL)
                             // Explicit, because the surrounding block is
                             // .secondary and would otherwise grey the link out.
                             .foregroundStyle(Color.accentColor)
