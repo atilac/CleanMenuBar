@@ -11,8 +11,8 @@ stays safe to edit by script.
 
 LANGUAGES = [
     ('pt-BR', 'Português do Brasil', None),        # None = published at the site root
-    ('en', 'English', 'en'),
     ('es', 'Español', 'es'),
+    ('en', 'English', 'en'),
     ('fr', 'Français', 'fr'),
     ('de', 'Deutsch', 'de'),
     ('ja', '日本語', 'ja'),
