@@ -10,10 +10,15 @@ Kept here so the answers stay consistent between submissions.
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
 | Team ID | NP9YTUN8LD |
 | Bundle ID | com.atilac.CleanMenuBar |
-| Support URL | https://monobit.com.br/cleanmenubar |
-| Privacy Policy URL | https://monobit.com.br/cleanmenubar/privacy.html |
+| Support URL | https://monobit.com.br/cleanmenubar/en/ |
+| Privacy Policy URL | https://monobit.com.br/cleanmenubar/en/privacy.html |
 | Category | Utilities |
 | Price | Free |
+
+The English URLs are deliberate: the site's root is Portuguese, and review is
+conducted in English. App Store Connect accepts a different privacy URL per
+localisation, so each locale can point at its own translation — `/privacy.html`
+for pt-BR, `/es/privacy.html` for Spanish, and so on.
 
 ## App Privacy questionnaire
 

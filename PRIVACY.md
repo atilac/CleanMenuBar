@@ -2,7 +2,7 @@
 
 **Last updated:** 15 September 2026
 **Applies to:** CleanMenuBar for macOS, all versions
-**Published at:** https://monobit.com.br/cleanmenubar/privacy.html
+**Published at:** https://monobit.com.br/cleanmenubar/en/privacy.html (Portuguese at the site root)
 **Nine translations:** built from `Tools/site_content.py` into `site/`
 
 ## The short version

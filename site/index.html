@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CleanMenuBar — hide menu bar icons on macOS 27</title>
-<meta name="description" content="CleanMenuBar hides your macOS menu bar icons. Open source, free, collects nothing. Built for macOS 27, the release that broke the others.">
+<title>CleanMenuBar — esconda ícones da barra de menus no macOS 27</title>
+<meta name="description" content="O CleanMenuBar esconde os ícones da barra de menus do macOS. Open-source, gratuito, não coleta nada. Feito para o macOS 27, a versão que quebrou os outros.">
 <link rel="canonical" href="https://monobit.com.br/cleanmenubar/index.html">
-<meta property="og:title" content="CleanMenuBar — hide menu bar icons on macOS 27">
+<meta property="og:title" content="CleanMenuBar — esconda ícones da barra de menus no macOS 27">
 <meta property="og:image" content="https://monobit.com.br/cleanmenubar/icon-512.png">
 <meta property="og:url" content="https://monobit.com.br/cleanmenubar/index.html">
 <meta property="og:type" content="website">
-<meta property="og:description" content="CleanMenuBar hides your macOS menu bar icons. Open source, free, collects nothing. Built for macOS 27, the release that broke the others.">
+<meta property="og:description" content="O CleanMenuBar esconde os ícones da barra de menus do macOS. Open-source, gratuito, não coleta nada. Feito para o macOS 27, a versão que quebrou os outros.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#ec4899">
-<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/index.html">
-<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/pt-br/index.html">
+<link rel="alternate" hreflang="pt-BR" href="https://monobit.com.br/cleanmenubar/index.html">
+<link rel="alternate" hreflang="en" href="https://monobit.com.br/cleanmenubar/en/index.html">
 <link rel="alternate" hreflang="es" href="https://monobit.com.br/cleanmenubar/es/index.html">
 <link rel="alternate" hreflang="fr" href="https://monobit.com.br/cleanmenubar/fr/index.html">
 <link rel="alternate" hreflang="de" href="https://monobit.com.br/cleanmenubar/de/index.html">
@@ -43,38 +43,38 @@
       </g>
     </svg></div>
   <h1>CleanMenuBar</h1>
-  <p class="tagline">Hide the menu bar icons you don't want to look at.</p>
-  <a class="download" href="https://github.com/atilac/CleanMenuBar/releases/latest">Download for macOS</a>
-  <p class="requirements">Free and open source · macOS 26 or later · Apple Silicon and Intel</p>
-  <nav class="lang"><a class="current" href="index.html" hreflang="en" lang="en">English</a><a href="pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="es/index.html" hreflang="es" lang="es">Español</a><a href="fr/index.html" hreflang="fr" lang="fr">Français</a><a href="de/index.html" hreflang="de" lang="de">Deutsch</a><a href="ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
+  <p class="tagline">Esconda os ícones da barra de menus que você não quer ver.</p>
+  <a class="download" href="https://github.com/atilac/CleanMenuBar/releases/latest">Baixar para macOS</a>
+  <p class="requirements">Grátis e open-source · macOS 26 ou posterior · Apple Silicon e Intel</p>
+  <nav class="lang"><a class="current" href="index.html" hreflang="pt-BR" lang="pt-BR">Português do Brasil</a><a href="en/index.html" hreflang="en" lang="en">English</a><a href="es/index.html" hreflang="es" lang="es">Español</a><a href="fr/index.html" hreflang="fr" lang="fr">Français</a><a href="de/index.html" hreflang="de" lang="de">Deutsch</a><a href="ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
 </header>
 
 <section>
-  <h2>Why it exists</h2>
-  <p>macOS 27 rebuilt the menu bar as a single window and broke Hidden Bar, the app I used to hide icons. It relied on a technique that stopped working.</p>
-  <p>CleanMenuBar is derived from Hidden Bar with an adapted mechanism, built and measured directly on macOS 27 Golden Gate one day after its public release (14 September 2026).</p>
+  <h2>Por que ele existe</h2>
+  <p>O macOS 27 reconstruiu a barra de menus como uma única janela e quebrou o Hidden Bar, app que eu utilizava e que escondia ícones. Ele usava uma técnica que passou a não funcionar mais.</p>
+  <p>O CleanMenuBar é uma implementação derivada do Hidden Bar, com mecanismo adaptado, e foi criado e medido diretamente no macOS 27 Golden Gate um dia após o seu lançamento público (dia 14/09/2026).</p>
 </section>
 
 <section>
-  <h2>What it does</h2>
-  <ul class="features"><li><strong>Hide and reveal</strong><span>A click, a global shortcut, or just hovering.</span></li><li><strong>Always-hidden section</strong><span>A second span that stays hidden even when you expand.</span></li><li><strong>Auto-collapse</strong><span>After 5, 10, 15, 30 or 60 seconds.</span></li><li><strong>No permissions</strong><span>No Accessibility, no Screen Recording. Runs sandboxed.</span></li><li><strong>Nine languages</strong><span>English, Portuguese, Spanish, French, German, Japanese, Chinese, Russian.</span></li><li><strong>Collects nothing</strong><span>No network, no telemetry, no accounts.</span></li></ul>
+  <h2>O que ele faz</h2>
+  <ul class="features"><li><strong>Esconde e revela</strong><span>Um clique, um atalho global ou o simples passar do cursor.</span></li><li><strong>Seção sempre oculta</strong><span>Um segundo trecho que permanece escondido mesmo ao expandir.</span></li><li><strong>Recolhimento automático</strong><span>Após 5, 10, 15, 30 ou 60 segundos.</span></li><li><strong>Nenhuma permissão</strong><span>Sem Acessibilidade, sem Gravação de Tela. Roda em sandbox.</span></li><li><strong>Nove idiomas</strong><span>Português, inglês, espanhol, francês, alemão, japonês, chinês e russo.</span></li><li><strong>Não coleta nada</strong><span>Sem rede, sem telemetria, sem contas.</span></li></ul>
 </section>
 
 <section>
-  <h2>Setting up</h2>
-  <ol class="steps"><li>Hold <kbd>⌘</kbd> and drag the icons you want hidden so they sit to the <strong>left</strong> of the CleanMenuBar separator.</li><li>Anything to the <strong>right</strong> of the separator stays visible at all times.</li><li>Click the arrow to collapse or expand, or press <kbd>⌃⌥⌘C</kbd> from anywhere.</li><li>Once arranged, turn on <strong>Hide the separators</strong> to leave only the arrow.</li></ol>
-  <p class="note">Positions survive relaunching — macOS remembers where each icon sits.</p>
+  <h2>Como usar</h2>
+  <ol class="steps"><li>Segure <kbd>⌘</kbd> e arraste os ícones que quer esconder para a <strong>esquerda</strong> do separador do CleanMenuBar.</li><li>O que ficar à <strong>direita</strong> do separador permanece sempre visível.</li><li>Clique na seta para recolher ou expandir, ou pressione <kbd>⌃⌥⌘C</kbd> de qualquer lugar.</li><li>Depois de organizar tudo, ative <strong>Ocultar os separadores</strong> para deixar só a seta.</li></ol>
+  <p class="note">As posições sobrevivem a reinícios — o macOS lembra onde cada ícone ficou.</p>
 </section>
 
 <section>
-  <h2>Installing</h2>
-  <p>Download the <code>.dmg</code>, drag CleanMenuBar to Applications, and open it.</p>
-  <p class="note">The app is signed with a Developer ID and notarised by Apple, so it opens without warnings. Until it reaches the Mac App Store, the download above is the official way to get it.</p>
+  <h2>Instalação</h2>
+  <p>Baixe o <code>.dmg</code>, arraste o CleanMenuBar para a pasta Aplicativos e abra.</p>
+  <p class="note">O app é assinado com Developer ID e notarizado pela Apple, então abre sem avisos. Enquanto não estiver na Mac App Store, o download acima é a forma oficial de obtê-lo.</p>
 </section>
 
 <footer>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms of Use</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
-  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · MIT License</p>
+  <nav><a href="privacy.html">Privacidade</a><a href="terms.html">Termos de Uso</a><a href="https://github.com/atilac/CleanMenuBar">GitHub</a><a href="mailto:apps@monobit.com.br">apps@monobit.com.br</a></nav>
+  <p>MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) · Licença MIT</p>
 </footer>
 </div>
 </body>

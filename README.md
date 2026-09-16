@@ -177,7 +177,7 @@ Ice is GPL-3.0, which is incompatible with this project's MIT licensing.
 CleanMenuBar collects nothing and has no network entitlement, so it cannot
 transmit anything even if its code tried to. Settings stay in its own sandbox
 container. Full policy: [PRIVACY.md](PRIVACY.md), published at
-https://monobit.com.br/cleanmenubar/privacy.html
+https://monobit.com.br/cleanmenubar/en/privacy.html
 
 ## Warranty
 

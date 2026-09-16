@@ -58,6 +58,8 @@ def alternates(page, depth):
     for code, _, folder in LANGUAGES:
         href = f"{SITE}/{page}" if folder is None else f"{SITE}/{folder}/{page}"
         out.append(f'<link rel="alternate" hreflang="{code}" href="{href}">')
+    # x-default is the page served to anyone whose language we do not carry.
+    # It has to be the root, whichever language sits there.
     out.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{page}">')
     return "\n".join(out)
 
@@ -244,6 +246,8 @@ def terms(code, t, depth):
 
 
 def main():
+    # English stays the reference for which keys must exist, regardless of which
+    # language is published at the root — it is where new copy is written first.
     missing = {
         code: sorted(set(C["en"]) - set(C.get(code, {})))
         for code, _, _ in LANGUAGES

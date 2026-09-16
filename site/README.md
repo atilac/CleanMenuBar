@@ -33,7 +33,7 @@ build step on the server, no dependencies and no framework — plain files.
 
 ```
 site/
-├── index.html          English, at the root
+├── index.html          Portuguese, at the root
 ├── privacy.html
 ├── terms.html
 ├── style.css
@@ -41,14 +41,19 @@ site/
 ├── favicon-32.png          PNG fallback
 ├── apple-touch-icon.png    180px, for iOS bookmarks
 ├── icon-512.png            og:image, for link previews
-├── pt-br/  es/  fr/  de/  ja/  zh-hans/  zh-hant/  ru/
+├── en/  es/  fr/  de/  ja/  zh-hans/  zh-hant/  ru/
 └── (index, privacy, terms in each)
 ```
 
-The privacy policy must be reachable at
-`https://monobit.com.br/cleanmenubar/privacy.html` before submitting to the Mac
-App Store — Apple requires a working privacy URL for every app, including those
-that collect nothing.
+Portuguese sits at the root; every other language lives in its own folder. The
+`hreflang` and `rel=canonical` tags are generated accordingly, and `x-default`
+points at the root.
+
+The privacy policy must be reachable before submitting to the Mac App Store —
+Apple requires a working privacy URL for every app, including those that collect
+nothing. Submit the English one, `/en/privacy.html`, since review is conducted
+in English; App Store Connect takes a separate URL per localisation if you want
+each to land on its own translation.
 
 ## Icons
 

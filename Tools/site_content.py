@@ -10,8 +10,8 @@ stays safe to edit by script.
 """
 
 LANGUAGES = [
-    ('en', 'English', None),        # None = published at the site root
-    ('pt-BR', 'Português (Brasil)', 'pt-br'),
+    ('pt-BR', 'Português do Brasil', None),        # None = published at the site root
+    ('en', 'English', 'en'),
     ('es', 'Español', 'es'),
     ('fr', 'Français', 'fr'),
     ('de', 'Deutsch', 'de'),
