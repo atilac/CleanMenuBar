@@ -21,6 +21,23 @@ LANGUAGES = [
     ('ru', 'Русский', 'ru'),
 ]
 
+# Flags are countries, not languages, so a few are approximations by nature:
+# Spanish is shown with Spain's flag although most speakers are in Latin America,
+# and English with the UK's. Traditional Chinese uses Taiwan's rather than
+# repeating the PRC flag — the script is used in Taiwan, Hong Kong and Macau,
+# not on the mainland, which writes Simplified.
+FLAGS = {
+    'pt-BR': '\U0001F1E7\U0001F1F7',
+    'es': '\U0001F1EA\U0001F1F8',
+    'en': '\U0001F1EC\U0001F1E7',
+    'fr': '\U0001F1EB\U0001F1F7',
+    'de': '\U0001F1E9\U0001F1EA',
+    'ja': '\U0001F1EF\U0001F1F5',
+    'zh-Hans': '\U0001F1E8\U0001F1F3',
+    'zh-Hant': '\U0001F1F9\U0001F1FC',
+    'ru': '\U0001F1F7\U0001F1FA',
+}
+
 UPDATED = '2026-09-15'
 
 C = {}

@@ -13,7 +13,7 @@ a page that needs to run code before it says anything.
 import os, shutil, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_content import C, LANGUAGES, UPDATED
+from site_content import C, FLAGS, LANGUAGES, UPDATED
 
 OUT = "site"
 REPO = "https://github.com/atilac/CleanMenuBar"
@@ -47,7 +47,12 @@ def language_switcher(current, page, depth):
     for code, label, folder in LANGUAGES:
         target = rel(depth, page) if folder is None else rel(depth, f"{folder}/{page}")
         cls = ' class="current"' if code == current else ""
-        links.append(f'<a{cls} href="{target}" hreflang="{code}" lang="{code}">{label}</a>')
+        # aria-hidden on the flag: a screen reader announcing "flag of Brazil"
+        # before the language name is noise, and the name already says it.
+        flag = f'<span class="flag" aria-hidden="true">{FLAGS[code]}</span>'
+        links.append(
+            f'<a{cls} href="{target}" hreflang="{code}" lang="{code}">{flag}{label}</a>'
+        )
     return '<nav class="lang">' + "".join(links) + "</nav>"
 
 

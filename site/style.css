@@ -111,7 +111,12 @@ kbd {
   background: var(--surface); color: var(--muted); text-decoration: none;
   border: 1px solid var(--border); border-radius: 999px;
   padding: .28rem .85rem; font-size: .8125rem;
+  display: inline-flex; align-items: center; gap: .4rem;
 }
+/* Emoji flags render in colour on Apple platforms and as letter pairs on
+   Windows, which is acceptable here: the language name carries the meaning and
+   the flag only decorates it. */
+.lang .flag { font-size: 1em; line-height: 1; }
 .lang a:hover { color: var(--text); }
 .lang a.current { background: var(--pink); color: #fff; border-color: transparent; }
 .legal .lang { justify-content: flex-start; margin: 0 0 2.5rem; }
