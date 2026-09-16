@@ -15,12 +15,12 @@
 
 ## Why this exists
 
-macOS 27 rebuilt the menu bar, and in doing so it broke every menu bar hider at
-once — Hidden Bar, Bartender, Ice, Thaw, Barbee, BetterTouchTool's menu bar
-features. They all leaned on the same trick, and that trick is gone.
+macOS 27 rebuilt the menu bar as a single window and broke Hidden Bar, the app
+I used to hide icons. It relied on a technique that stopped working.
 
-CleanMenuBar is a fresh implementation of the hiding mechanism, built and
-measured against macOS 27 rather than patched toward it.
+CleanMenuBar is derived from Hidden Bar with an adapted mechanism, built and
+measured directly on macOS 27 Golden Gate one day after its public release
+(14 September 2026).
 
 ## How macOS 27 broke the old approach
 
