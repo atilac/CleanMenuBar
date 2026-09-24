@@ -60,10 +60,17 @@ xcodebuild -project "$APP.xcodeproj" -scheme "$APP" \
            $BUILD_ARG \
            archive
 
+# -allowProvisioningUpdates lets Xcode create the Mac App Store profile on
+# demand. It has to authenticate with the Xcode-signed-in Apple ID rather than
+# the App Store Connect API key: the key is read-only, and passing it here fails
+# with "You haven't been given access to cloud-managed distribution
+# certificates" — a permissions message that reads like a team problem but is
+# only about the key's role.
 xcodebuild -exportArchive \
            -archivePath build/appstore/"$APP".xcarchive \
            -exportOptionsPlist ExportOptions-AppStore.plist \
-           -exportPath dist-appstore
+           -exportPath dist-appstore \
+           -allowProvisioningUpdates
 
 PKG=$(find dist-appstore -name "*.pkg" | head -1)
 test -n "$PKG" || { echo "error: no .pkg produced"; exit 1; }

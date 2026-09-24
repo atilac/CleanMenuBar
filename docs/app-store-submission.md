@@ -230,8 +230,23 @@ xcrun altool --upload-app -t macos -f dist-appstore/CleanMenuBar.pkg \
   --apiKey ABX25DD23T --apiIssuer 0f395b89-aeaf-403e-ad15-c3d5558be79b
 ```
 
-`altool` reads the key from `~/.appstoreconnect/private_keys/`, which does not
-exist yet; `AuthKey_ABX25DD23T.p8` has to be copied there first.
+`altool` reads the key from `~/.appstoreconnect/private_keys/`; the key is now
+in place there.
+
+The API key is read-only. It can list certificates, identifiers, apps and
+builds, and it can upload — but it cannot edit the version string, create a
+provisioning profile, or sign in the cloud. So the version number has to be
+changed in the web interface, and the export relies on the Apple ID signed into
+Xcode instead. Raising the key's role in *Users and Access › Integrations*
+would remove both restrictions.
+
+### Trader status
+
+App Store Connect will not accept a submission until *Business › Trader Status*
+is filled in — an EU Digital Services Act requirement for anything new since
+October 2024. As a registered company the answer is that MONOBIT is a trader,
+and the contact details given there become publicly visible on the EU
+storefronts.
 
 ### 6. Fill the listing
 

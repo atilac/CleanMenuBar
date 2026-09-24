@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CleanMenuBar.pkg</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>4</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>CA57782E68A38F6F3D9754EFCABA27459E9A2584</string>
+				<key>dateExpires</key>
+				<string>24/09/27</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>com.apple.application-identifier</key>
+				<string>NP9YTUN8LD.com.monobit.CleanMenuBar</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>NP9YTUN8LD</string>
+				<key>com.apple.security.app-sandbox</key>
+				<true/>
+				<key>com.apple.security.files.user-selected.read-only</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>CleanMenuBar.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>1c857e62-b516-4ca6-8088-54770fcc6f75</string>
+				<key>dateExpires</key>
+				<string>24/09/27</string>
+				<key>name</key>
+				<string>Mac Team Store Provisioning Profile: com.monobit.CleanMenuBar</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>NP9YTUN8LD</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+			<key>versionNumber</key>
+			<string>0.1.3</string>
+		</dict>
+	</array>
+</dict>
+</plist>

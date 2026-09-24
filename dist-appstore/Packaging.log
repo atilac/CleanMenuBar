@@ -1,0 +1,149 @@
+2026-09-24 21:37:45 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7a25e91800; archive(resolved)="<IDEArchive: 0x7a25ce5c00>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team(resolved)="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7a25e91800; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0x7a25e92100; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349ad00; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349aa80; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349a800; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349a580; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349a300; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a2349a080; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a23499e00; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a23498f00; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a23498c80; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a23498a00; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="<IDEProvisioningBasicTeam: 0x7a25e68380; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x7a23498780; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="(null)">
+	<IDEDistributionContext: 0x7a23498000; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x7a2356c630>", team="(null)">
+	<IDEDistributionContext: 0x100ea5c30; archive = "<IDEArchive: 0x7a25ce5c00>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7a25e91800>
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-09-24 21:37:45 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app' '/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app'
+2026-09-24 21:37:45 +0000  >>> Copying /Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app 
+2026-09-24 21:37:45 +0000  copying file ./Contents/_CodeSignature/CodeResources ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/_CodeSignature/CodeResources
+2026-09-24 21:37:45 +0000  copying file ./Contents/MacOS/CleanMenuBar ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/MacOS/CleanMenuBar
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/de.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/de.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/de.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/de.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/zh-Hans.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/zh-Hans.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/zh-Hans.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/zh-Hans.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/ja.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/ja.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/ja.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/ja.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/en.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/en.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/en.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/en.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/LICENSE ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/LICENSE
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/es-ES.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/es-ES.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/es-ES.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/es-ES.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/AppIcon.icns ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/AppIcon.icns
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/zh-Hant.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/zh-Hant.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/zh-Hant.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/zh-Hant.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/NOTICE ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/NOTICE
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/Assets.car ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/Assets.car
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/pt-BR.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/pt-BR.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/pt-BR.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/pt-BR.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/ru.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/ru.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/ru.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/ru.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/fr.lproj/Localizable.strings ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/fr.lproj/Localizable.strings
+2026-09-24 21:37:45 +0000  copying file ./Contents/Resources/fr.lproj/Localizable.stringsdict ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Resources/fr.lproj/Localizable.stringsdict
+2026-09-24 21:37:45 +0000  copying file ./Contents/Info.plist ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/Info.plist
+2026-09-24 21:37:45 +0000  copying file ./Contents/PkgInfo ... 
+2026-09-24 21:37:45 +0000  hardlinked ./Contents/PkgInfo
+2026-09-24 21:37:45 +0000 [MT] /usr/bin/ditto exited with 0
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-09-24 21:37:45 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionItemRemovalStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-09-24 21:37:45 +0000 [MT] Writing /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Symbols/5504C615-6721-3D93-ACA1-580BF75A337C.symbols
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionCopyAppleProvidedContentStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-09-24 21:37:45 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-09-24 21:37:45 +0000 [MT] Archs to thin for item /Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app are []
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-09-24 21:37:45 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-09-24 21:37:45 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-09-24 21:37:45 +0000 [MT] Entitlements for <IDEDistributionItem: 0x7a235610e0; bundleID='com.monobit.CleanMenuBar', path='<DVTFilePath:0x7a25ce5c70:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7a23561080; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.monobit.CleanMenuBar', executablePath='<DVTFilePath:0x7a245f3f00:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'>: {
+    "com.apple.application-identifier" = "NP9YTUN8LD.com.monobit.CleanMenuBar";
+    "com.apple.developer.team-identifier" = NP9YTUN8LD;
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}
+2026-09-24 21:37:45 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-09-24 21:37:45 +0000 [MT] Entitlements for <IDEDistributionItem: 0x7a235610e0; bundleID='com.monobit.CleanMenuBar', path='<DVTFilePath:0x7a25ce5c70:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7a23561080; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.monobit.CleanMenuBar', executablePath='<DVTFilePath:0x7a245f3f00:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'> are: {
+    "com.apple.application-identifier" = "NP9YTUN8LD.com.monobit.CleanMenuBar";
+    "com.apple.developer.team-identifier" = NP9YTUN8LD;
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}
+2026-09-24 21:37:45 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x7a235610e0; bundleID='com.monobit.CleanMenuBar', path='<DVTFilePath:0x7a25ce5c70:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7a23561080; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.monobit.CleanMenuBar', executablePath='<DVTFilePath:0x7a245f3f00:'/Users/atilac/dev/cleanmenubar/build/appstore/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'> to: /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/entitlements~~~cFl6JW
+2026-09-24 21:37:45 +0000 [MT] invoking codesign: <NSConcreteTask: 0x7a22c61310; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    CA57782E68A38F6F3D9754EFCABA27459E9A2584,
+    "--entitlements",
+    "/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/entitlements~~~cFl6JW",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app"
+)'>
+2026-09-24 21:38:20 +0000 [MT] codesign output: /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app: replacing existing signature
+/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app: signed app bundle with Mach-O thin (arm64) [com.monobit.CleanMenuBar]
+2026-09-24 21:38:20 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-09-24 21:38:20 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-09-24 21:38:20 +0000 [MT] Processing step: IDEDistributionCreatePKGStep
+2026-09-24 21:38:20 +0000 [MT] Running /usr/bin/productbuild '--sign' '3rd Party Mac Developer Installer: ATILA VITAL CAVALCANTE DA SILVA LTDA (NP9YTUN8LD)' '--symbolication' '/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Symbols' '--component' '/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app' '/Applications' '/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Packages/CleanMenuBar.pkg'
+2026-09-24 21:38:20 +0000  write: Permission denied
+write: Permission denied
+2026-09-24 21:38:20 +0000  write: Permission denied
+write: Permission denied
+2026-09-24 21:38:24 +0000  productbuild: Adding component at /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app
+productbuild: Signing product with identity "3rd Party Mac Developer Installer: ATILA VITAL CAVALCANTE DA SILVA LTDA (NP9YTUN8LD)" from keychain /Users/atilac/Library/Keychains/login.keychain-db
+productbuild: Adding certificate "Apple Worldwide Developer Relations Certification Authority"
+productbuild: Adding certificate "Apple Root CA"
+productbuild: Wrote product to /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Packages/CleanMenuBar.pkg
+productbuild: Supported OS versions: [Min: 27.0, Before: None]
+2026-09-24 21:38:24 +0000 [MT] /usr/bin/productbuild exited with 0
+2026-09-24 21:38:24 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-09-24 21:38:24 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-09-24 21:38:24 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-09-24 21:38:24 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x7a25fb2530:'/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~p30PgE/Root/Applications/CleanMenuBar.app'>
+2026-09-24 21:38:24 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2026-09-24 21:38:24 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so
