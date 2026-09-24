@@ -41,51 +41,18 @@ struct GeneralSettingsView: View {
     @State private var languageNeedsRelaunch = false
 
     var body: some View {
-        Form {
-            // Asked once, at the only moment it makes sense: the window opens by
-            // itself on first launch, and the switch it refers to is just below.
-            // Consent beats a default — registering a login item unasked is what
-            // App Store review objects to.
+        VStack(spacing: 0) {
+            // Outside the Form, not inside it. On macOS every direct child of a
+            // Form gets a row container with the grey group background, and
+            // .listRowBackground does not clear it — so a tinted card placed
+            // inside always ends up framed by a grey rectangle it cannot escape.
             if !preferences.loginSuggestionAnswered && !preferences.launchAtLogin {
-                // No Section wrapper: a Form section draws its own grey frame,
-                // and nesting the tinted card inside it put one rounded
-                // rectangle around another. The card is the block.
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("CleanMenuBar only works while it is running. Open it automatically when you log in?")
-                        .fixedSize(horizontal: false, vertical: true)
-                    HStack {
-                        Spacer()
-                        Button("Not now") { preferences.loginSuggestionAnswered = true }
-                        Button("Turn on") {
-                            preferences.launchAtLogin = true
-                            preferences.loginSuggestionAnswered = true
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .tint(Self.brand)
-                    }
-                }
-                .padding(14)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                // Tinted in the app's own pink rather than left in the grey
-                // every other section uses: this card asks a question
-                // instead of showing a setting, and should not read as one
-                // more row. Kept light — a strong fill would look like an
-                // error rather than an offer.
-                //
-                // Painted on the content, not via .listRowBackground: on
-                // macOS a Form ignores that modifier, and the first attempt
-                // left the card the same grey as everything around it.
-                .background(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(Self.brand.opacity(0.12))
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .strokeBorder(Self.brand.opacity(0.40), lineWidth: 1)
-                )
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
+                loginCard
+                    .padding(.horizontal, 20)
+                    .padding(.top, 18)
             }
+
+            Form {
 
             Section {
                 Picker("Language", selection: $language) {
@@ -153,7 +120,11 @@ struct GeneralSettingsView: View {
                 .foregroundStyle(.secondary)
             }
         }
-        .formStyle(.grouped)
+            .formStyle(.grouped)
+            // The card sits on the window background; without this the Form's
+            // own scroll background draws a visible tonal seam under it.
+            .scrollContentBackground(.hidden)
+        }
         .onChange(of: language) { _, newValue in
             AppLanguage.select(newValue)
             // macOS binds the bundle's language at launch. Switching in place
@@ -167,6 +138,40 @@ struct GeneralSettingsView: View {
         .onChange(of: preferences.useFullStatusBarOnExpand) { notifyController() }
         .onChange(of: preferences.autoCollapse) { notifyController() }
         .onChange(of: preferences.autoCollapseDelay) { notifyController() }
+    }
+
+    /// Asked once, at the only moment it makes sense: the window opens by itself
+    /// on first launch, and the switch it refers to is a few rows below. Consent
+    /// beats a default — registering a login item unasked is what App Store
+    /// review objects to.
+    private var loginCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("CleanMenuBar only works while it is running. Open it automatically when you log in?")
+                .fixedSize(horizontal: false, vertical: true)
+            HStack {
+                Spacer()
+                Button("Not now") { preferences.loginSuggestionAnswered = true }
+                Button("Turn on") {
+                    preferences.launchAtLogin = true
+                    preferences.loginSuggestionAnswered = true
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Self.brand)
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        // Painted on the content rather than via .listRowBackground, which a
+        // Form ignores on macOS. Kept light so it reads as a suggestion rather
+        // than an error, and composites correctly in both appearances.
+        .background(
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(Self.brand.opacity(0.12))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .strokeBorder(Self.brand.opacity(0.40), lineWidth: 1)
+        )
     }
 
     private func notifyController() {
