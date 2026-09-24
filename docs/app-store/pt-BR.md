@@ -1,6 +1,6 @@
 # App Store — pt-BR
 
-**Versão 0.1.1** — a mesma numeração do release no GitHub, de propósito: um
+**Versão 0.1.2** — a mesma numeração do release no GitHub, de propósito: um
 número, um binário, um conjunto de mudanças, onde quer que a pessoa encontre o app.
 
 Em revisão. Os limites de caracteres são da Apple e são rígidos.
