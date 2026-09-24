@@ -47,9 +47,25 @@ jobs:
           APP=build/Build/Products/Release/CleanMenuBar.app
           "$APP/Contents/MacOS/CleanMenuBar" > run.log 2>&1 &
           PID=$!
-          sleep 5
+
+          # Wait for the app to say it is ready rather than sleeping a fixed
+          # amount. The signal handlers below are unsafe until the app has armed
+          # them: until then the default disposition for SIGUSR2 is to terminate,
+          # so signalling too early kills the process and the log comes back
+          # empty. A loaded runner makes that the normal case, not the rare one.
+          for _ in $(seq 60); do
+            grep -q "^READY" run.log && break
+            kill -0 $PID 2>/dev/null || break
+            sleep 0.5
+          done
+          grep -q "^READY" run.log || {
+            echo "the app never became ready"; cat run.log; exit 1; }
+
           kill -USR2 $PID
-          sleep 2
+          for _ in $(seq 20); do
+            grep -q "shoveLength=" run.log && break
+            sleep 0.5
+          done
           kill $PID 2>/dev/null || true
           echo "--- diagnostics ---"
           cat run.log

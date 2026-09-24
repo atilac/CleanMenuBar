@@ -70,6 +70,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         installDiagnosticsSignal(controller, preferences)
         installAlwaysHiddenSignal(controller)
         installReloadSignal(controller)
+
+        // Announced only once every handler above is armed. Until each one runs
+        // its signal(..., SIG_IGN), the default disposition for that signal is
+        // still to terminate — so a script that signals on a fixed sleep kills
+        // the app on a slow machine instead of driving it. Waiting for this line
+        // removes the race rather than making it less likely.
+        print("READY pid=\(ProcessInfo.processInfo.processIdentifier)")
+        fflush(stdout)
     }
 
     /// `kill -USR1 <pid>` toggles the bar. The menu bar cannot be driven by UI

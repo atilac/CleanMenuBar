@@ -56,8 +56,16 @@ for LANGUAGE in en pt-BR es fr de ja zh-Hans zh-Hant ru; do
 
     # The menu bar strips, in both states.
     defaults write "$DOMAIN" showSettingsAtLaunch -bool false
-    "$APP" >/dev/null 2>&1 &
-    sleep 3
+    # Wait for the app to announce itself instead of sleeping a fixed amount:
+    # SIGUSR1 below terminates it outright until the handler is armed, which on
+    # a busy machine happens after any sleep short enough to be worth using.
+    LAUNCH_LOG=$(mktemp)
+    "$APP" > "$LAUNCH_LOG" 2>&1 &
+    for _ in $(seq 60); do
+        grep -q "^READY" "$LAUNCH_LOG" && break
+        sleep 0.5
+    done
+    grep -q "^READY" "$LAUNCH_LOG" || { echo "the app never became ready"; exit 1; }
     PID=$(pgrep -f "CleanMenuBar.app/Contents/MacOS/CleanMenuBar" | head -1)
     # Framed on the icons themselves. The region stops before x=1500 because
     # macOS draws the screen-recording indicator at the right edge while
@@ -69,6 +77,7 @@ for LANGUAGE in en pt-BR es fr de ja zh-Hans zh-Hant ru; do
     kill -USR1 "$PID"; sleep 2
     screencapture -x -R 1064,0,426,32 "$SHOTS/bar_collapsed.png"
     pkill -f "CleanMenuBar.app/Contents/MacOS/CleanMenuBar" 2>/dev/null || true
+    rm -f "$LAUNCH_LOG"
     sleep 1
 
     # The settings window, two tabs.
