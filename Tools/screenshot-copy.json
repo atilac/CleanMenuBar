@@ -1,0 +1,101 @@
+{
+  "en": {
+    "h1": "Your menu bar, only what matters",
+    "s1": "Hide the icons you never use. Reveal them when you need them.",
+    "capExpanded": "Expanded — everything within reach",
+    "capCollapsed": "Collapsed — one click away",
+    "capShortcut": "Or press ⌃⌥⌘C from anywhere.",
+    "h2": "Set it up once",
+    "s2": "⌘-drag the icons you want hidden. Click the arrow, or press ⌃⌥⌘C.",
+    "h3": "Made for macOS 27",
+    "s3": "Four steps to set up. No permissions, and nothing leaves your Mac."
+  },
+  "pt-BR": {
+    "h1": "Sua barra de menus, só o que importa",
+    "s1": "Esconda os ícones que você nunca usa. Revele quando precisar.",
+    "capExpanded": "Expandido — tudo ao alcance",
+    "capCollapsed": "Recolhido — a um clique",
+    "capShortcut": "Ou pressione ⌃⌥⌘C de qualquer lugar.",
+    "h2": "Configure uma vez só",
+    "s2": "Arraste com ⌘ os ícones que quer esconder. Clique na seta, ou use ⌃⌥⌘C.",
+    "h3": "Feito para o macOS 27",
+    "s3": "Quatro passos para configurar. Sem permissões, nada sai do seu Mac."
+  },
+  "es": {
+    "h1": "Tu barra de menús, solo lo que importa",
+    "s1": "Oculta los iconos que nunca usas. Muéstralos cuando los necesites.",
+    "capExpanded": "Expandida — todo al alcance",
+    "capCollapsed": "Contraída — a un clic",
+    "capShortcut": "O pulsa ⌃⌥⌘C desde cualquier sitio.",
+    "h2": "Configúralo una sola vez",
+    "s2": "Arrastra con ⌘ los iconos a ocultar. Haz clic en la flecha, o pulsa ⌃⌥⌘C.",
+    "h3": "Hecho para macOS 27",
+    "s3": "Cuatro pasos para configurar. Sin permisos, nada sale de tu Mac."
+  },
+  "fr": {
+    "h1": "Votre barre des menus, l'essentiel",
+    "s1": "Masquez les icônes que vous n'utilisez jamais. Affichez-les au besoin.",
+    "capExpanded": "Dépliée — tout à portée",
+    "capCollapsed": "Repliée — à un clic",
+    "capShortcut": "Ou appuyez sur ⌃⌥⌘C depuis n'importe où.",
+    "h2": "Une seule configuration",
+    "s2": "Glissez avec ⌘ les icônes à masquer. Cliquez sur la flèche, ou ⌃⌥⌘C.",
+    "h3": "Conçu pour macOS 27",
+    "s3": "Quatre étapes. Aucune autorisation, et rien ne quitte votre Mac."
+  },
+  "de": {
+    "h1": "Ihre Menüleiste, nur das Wesentliche",
+    "s1": "Blenden Sie ungenutzte Symbole aus. Holen Sie sie bei Bedarf zurück.",
+    "capExpanded": "Ausgeklappt — alles griffbereit",
+    "capCollapsed": "Eingeklappt — einen Klick entfernt",
+    "capShortcut": "Oder drücken Sie überall ⌃⌥⌘C.",
+    "h2": "Einmal einrichten",
+    "s2": "Symbole mit ⌘ ziehen. Auf den Pfeil klicken oder ⌃⌥⌘C drücken.",
+    "h3": "Für macOS 27 gemacht",
+    "s3": "Vier Schritte. Keine Berechtigungen, und nichts verlässt Ihren Mac."
+  },
+  "ja": {
+    "h1": "メニューバーに、必要なものだけ",
+    "s1": "使わないアイコンを隠し、必要なときに表示します。",
+    "capExpanded": "展開 — すべてが手の届く場所に",
+    "capCollapsed": "折りたたみ — クリック一つで戻る",
+    "capShortcut": "どこからでも ⌃⌥⌘C。",
+    "h2": "設定は一度だけ",
+    "s2": "⌘を押しながら隠したいアイコンをドラッグ。矢印をクリックするか ⌃⌥⌘C。",
+    "h3": "macOS 27のために",
+    "s3": "設定は4ステップ。権限は不要で、Macの外には何も出ません。"
+  },
+  "zh-Hans": {
+    "h1": "菜单栏，只留下重要的",
+    "s1": "隐藏你从不使用的图标，需要时再显示。",
+    "capExpanded": "展开 — 一切触手可及",
+    "capCollapsed": "折叠 — 一点即回",
+    "capShortcut": "或在任意位置按 ⌃⌥⌘C。",
+    "h2": "只需设置一次",
+    "s2": "按住 ⌘ 拖移要隐藏的图标。点按箭头，或按 ⌃⌥⌘C。",
+    "h3": "为 macOS 27 打造",
+    "s3": "四步完成设置。无需权限，不会有任何内容离开你的 Mac。"
+  },
+  "zh-Hant": {
+    "h1": "選單列，只留下重要的",
+    "s1": "隱藏你從不使用的圖像，需要時再顯示。",
+    "capExpanded": "展開 — 一切觸手可及",
+    "capCollapsed": "收合 — 一點即回",
+    "capShortcut": "或在任何地方按 ⌃⌥⌘C。",
+    "h2": "只需設定一次",
+    "s2": "按住 ⌘ 拖曳要隱藏的圖像。點一下箭頭，或按 ⌃⌥⌘C。",
+    "h3": "為 macOS 27 打造",
+    "s3": "四步完成設定。無需權限，不會有任何內容離開你的 Mac。"
+  },
+  "ru": {
+    "h1": "Строка меню — только нужное",
+    "s1": "Скройте значки, которыми не пользуетесь. Показывайте при необходимости.",
+    "capExpanded": "Развёрнуто — всё под рукой",
+    "capCollapsed": "Свёрнуто — в одном щелчке",
+    "capShortcut": "Или нажмите ⌃⌥⌘C из любого места.",
+    "h2": "Настроить один раз",
+    "s2": "Перетащите значки с ⌘. Нажмите стрелку или ⌃⌥⌘C.",
+    "h3": "Создано для macOS 27",
+    "s3": "Четыре шага. Без разрешений, и ничто не покидает ваш Mac."
+  }
+}

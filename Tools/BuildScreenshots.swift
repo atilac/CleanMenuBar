@@ -10,12 +10,32 @@
 import AppKit
 
 let arguments = CommandLine.arguments
-guard arguments.count >= 3 else {
-    fputs("usage: BuildScreenshots.swift <assets-dir> <output-dir>\n", stderr)
+guard arguments.count >= 4 else {
+    fputs("usage: BuildScreenshots.swift <assets-dir> <output-dir> <language>\n", stderr)
     exit(2)
 }
 let assets = arguments[1]
 let output = arguments[2]
+let language = arguments[3]
+
+/// Headlines and captions live in JSON so they can be corrected without
+/// touching this file — and so a missing translation fails here rather than
+/// shipping an English frame into a Japanese listing.
+let copyPath = (arguments.count > 4) ? arguments[4] : "Tools/screenshot-copy.json"
+guard let copyData = FileManager.default.contents(atPath: copyPath),
+      let allCopy = try? JSONSerialization.jsonObject(with: copyData) as? [String: [String: String]],
+      let copy = allCopy[language]
+else {
+    fputs("no copy for \(language) in \(copyPath)\n", stderr)
+    exit(3)
+}
+func text(_ key: String) -> String {
+    guard let value = copy[key] else {
+        fputs("missing key \(key) for \(language)\n", stderr)
+        exit(4)
+    }
+    return value
+}
 try? FileManager.default.createDirectory(atPath: output, withIntermediateDirectories: true)
 
 /// Apple accepts 2880x1800 or 2560x1600 for macOS. The larger one leaves room
@@ -161,23 +181,23 @@ let general = load("win_general.png")
 let howItWorks = load("win_howitworks.png")
 
 frame("01-before-after",
-      headline: "Your menu bar, only what matters",
-      subhead: "Hide the icons you never use. Reveal them when you need them.") { _ in
+      headline: text("h1"),
+      subhead: text("s1")) { _ in
     // Centred in the space the headline leaves, rather than hugging it: the
     // first attempt stacked both strips high and left a third of the canvas
     // empty underneath.
     var y: CGFloat = 1120
-    if let expanded { y = drawStrip(expanded, top: y, targetWidth: 1900, label: "Expanded — everything within reach") }
+    if let expanded { y = drawStrip(expanded, top: y, targetWidth: 1560, label: text("capExpanded")) }
     y -= 230
-    if let collapsed { y = drawStrip(collapsed, top: y, targetWidth: 1900, label: "Collapsed — one click away") }
+    if let collapsed { y = drawStrip(collapsed, top: y, targetWidth: 1560, label: text("capCollapsed")) }
     y -= 170
-    draw("Or press ⌃⌥⌘C from anywhere.", centreX: size.width / 2, top: y,
+    draw(text("capShortcut"), centreX: size.width / 2, top: y,
          size: 44, weight: .regular, colour: muted.withAlphaComponent(0.85), maxWidth: 1800)
 }
 
 frame("02-settings",
-      headline: "Set it up once",
-      subhead: "⌘-drag the icons you want hidden. Click the arrow, or press ⌃⌥⌘C.") { _ in
+      headline: text("h2"),
+      subhead: text("s2")) { _ in
     if let general { drawWindow(general, top: 1250, targetHeight: 1120) }
 }
 
@@ -186,7 +206,7 @@ frame("02-settings",
 // steps, which asks the reader to take the claim on faith while looking at
 // something else.
 frame("03-how-it-works",
-      headline: "Made for macOS 27",
-      subhead: "Four steps to set up. No permissions, and nothing leaves your Mac.") { _ in
+      headline: text("h3"),
+      subhead: text("s3")) { _ in
     if let howItWorks { drawWindow(howItWorks, top: 1250, targetHeight: 1120) }
 }

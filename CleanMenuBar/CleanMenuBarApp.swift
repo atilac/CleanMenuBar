@@ -25,6 +25,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         AppLanguage.refreshSystemSnapshot()
 
         let preferences = Preferences.shared
+
+        // The stored preference and the system's login-item registration can
+        // disagree: the default is on, but nothing registers it, and a user who
+        // removes the item in System Settings leaves the switch showing on.
+        // Reconciling at launch makes the switch tell the truth.
+        if preferences.launchAtLogin != LaunchAtLogin.isEnabled {
+            LaunchAtLogin.setEnabled(preferences.launchAtLogin)
+        }
         let controller = StatusBarController(preferences: preferences)
         self.controller = controller
 

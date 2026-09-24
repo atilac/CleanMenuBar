@@ -123,3 +123,34 @@ jobs:
           fi
 
           exit $failed
+
+      - name: Every UI string in the code has a catalogue entry
+        run: |
+          # The checks above prove the catalogue is complete. They cannot see a
+          # string that never reached it: change a literal in the code without
+          # updating the catalogue and it falls back to English, silently, in
+          # every other language. That is how the always-hidden footer shipped
+          # untranslated — found by reading a Japanese screenshot, not by CI.
+          python3 - <<'PY'
+          import glob, json, re, sys
+
+          catalogue = json.load(open("CleanMenuBar/Localizable.xcstrings", encoding="utf-8"))
+          known = set(catalogue["strings"])
+
+          source = "".join(open(f, encoding="utf-8").read()
+                           for f in glob.glob("CleanMenuBar/**/*.swift", recursive=True))
+
+          def normalise(literal):
+              # Swift interpolation becomes a format specifier in the catalogue.
+              literal = re.sub(r"\\\(Int\([^)]*\)\)", "%lld", literal)
+              return re.sub(r"\\\([^)]*\)", "%@", literal)
+
+          missing = sorted({
+              literal for literal in re.findall(r'Text\("((?:[^"\\]|\\.){10,})"\)', source)
+              if normalise(literal) not in known
+          })
+          for literal in missing:
+              print(f"not in the catalogue: {literal[:90]}")
+          print(f"{len(known)} catalogue keys")
+          sys.exit(1 if missing else 0)
+          PY

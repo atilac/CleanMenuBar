@@ -4291,6 +4291,242 @@
           }
         }
       }
+    },
+    "Turning on the always-hidden section reveals it so you can ⌘-drag icons to the left of its faint separator; it hides again on the next collapse. Hiding the separators also makes them impossible to ⌘-drag, so arrange your icons first.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turning on the always-hidden section reveals it so you can ⌘-drag icons to the left of its faint separator; it hides again on the next collapse. Hiding the separators also makes them impossible to ⌘-drag, so arrange your icons first."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ativar a seção sempre oculta a revela, para você arrastar ícones com ⌘ para a esquerda do separador pontilhado; ela se esconde de novo no próximo recolhimento. Ocultar os separadores também impede arrastá-los com ⌘, então organize seus ícones antes."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar la sección siempre oculta la revela, para que puedas arrastrar iconos con ⌘ a la izquierda de su separador punteado; vuelve a ocultarse en la siguiente contracción. Ocultar los separadores también impide arrastrarlos con ⌘, así que organiza tus iconos antes."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer la section toujours masquée la révèle, afin que vous puissiez faire glisser des icônes avec ⌘ à gauche de son séparateur pointillé ; elle se masque de nouveau au repli suivant. Masquer les séparateurs empêche aussi de les déplacer avec ⌘ : organisez d'abord vos icônes."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Einschalten des immer ausgeblendeten Bereichs zeigt ihn an, damit Sie Symbole mit ⌘ links neben seinen gepunkteten Trenner ziehen können; beim nächsten Einklappen verschwindet er wieder. Ausgeblendete Trenner lassen sich zudem nicht mehr mit ⌘ bewegen – ordnen Sie Ihre Symbole zuerst."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常に非表示のセクションをオンにすると表示され、点線の区切りの左側へ⌘を押しながらアイコンをドラッグできます。次に折りたたむと再び隠れます。区切りを隠すと⌘ドラッグもできなくなるため、先にアイコンを並べ替えてください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启始终隐藏区域会将其显示出来，便于你按住 ⌘ 将图标拖到其点状分隔符的左侧；下次折叠时它会重新隐藏。隐藏分隔符后也将无法再用 ⌘ 拖移它们，请先整理好图标。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟永遠隱藏的區域會將其顯示出來，便於你按住 ⌘ 將圖像拖曳至其點狀分隔符號的左側；下次收合時它會重新隱藏。隱藏分隔符號後也將無法再用 ⌘ 拖曳它們，請先整理好圖像。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включение всегда скрытой секции показывает её, чтобы вы могли перетащить значки с ⌘ левее её точечного разделителя; при следующем сворачивании она скроется снова. После скрытия разделители нельзя будет перетаскивать с ⌘, поэтому сначала расставьте значки."
+          }
+        }
+      }
+    },
+    "CleanMenuBar only works while it is running. Open it automatically when you log in?": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar only works while it is running. Open it automatically when you log in?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O CleanMenuBar só funciona enquanto está aberto. Quer que ele abra sozinho ao iniciar sessão?"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar solo funciona mientras está abierto. ¿Quieres que se abra solo al iniciar sesión?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar ne fonctionne que s'il est lancé. Voulez-vous qu'il s'ouvre à l'ouverture de session ?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar funktioniert nur, solange es läuft. Soll es bei der Anmeldung automatisch öffnen?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBarは起動している間だけ機能します。ログイン時に自動的に開きますか？"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar 仅在运行时有效。要在登录时自动打开吗？"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar 僅在執行時有效。要在登入時自動開啟嗎？"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CleanMenuBar работает, только пока запущен. Открывать его автоматически при входе?"
+          }
+        }
+      }
+    },
+    "Not now": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not now"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agora não"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahora no"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas maintenant"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt nicht"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今はしない"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂不"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暫不"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не сейчас"
+          }
+        }
+      }
+    },
+    "Turn on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ativar"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktivieren"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンにする"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включить"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

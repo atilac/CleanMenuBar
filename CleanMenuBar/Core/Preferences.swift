@@ -21,6 +21,7 @@ final class Preferences {
         static let globalShortcut = "globalShortcut"
         static let showSettingsAtLaunch = "showSettingsAtLaunch"
         static let restoreLastState = "restoreLastState"
+        static let loginSuggestionAnswered = "loginSuggestionAnswered"
         static let lastStateCollapsed = "lastStateCollapsed"
     }
 
@@ -35,8 +36,13 @@ final class Preferences {
             Key.hoverToExpand: false,
             Key.separatorsHidden: false,
             Key.useFullStatusBarOnExpand: false,
-            // Hidden Bar opens its window on first launch; without it an accessory
-            // app gives a new user no sign that anything installed.
+            // Opening the window on first launch is on by default: an accessory
+            // app that opens no window gives a new user no sign it installed.
+            //
+            // Launching at login is deliberately NOT. Registering a login item
+            // without being asked is the kind of thing App Store review objects
+            // to, and the switch is right there in this window for anyone who
+            // wants it.
             Key.showSettingsAtLaunch: true,
             // Off by default: an app that opens already collapsed makes icons
             // vanish with no explanation the first time someone installs it.
@@ -100,6 +106,15 @@ final class Preferences {
     var showSettingsAtLaunch: Bool {
         get { access(keyPath: \.showSettingsAtLaunch); return defaults.bool(forKey: Key.showSettingsAtLaunch) }
         set { withMutation(keyPath: \.showSettingsAtLaunch) { defaults.set(newValue, forKey: Key.showSettingsAtLaunch) } }
+    }
+
+    /// Whether the one-time "open at login?" suggestion has been answered.
+    ///
+    /// Set by either button, including "Not now" — a prompt that returns after
+    /// being declined is nagging, not helping.
+    var loginSuggestionAnswered: Bool {
+        get { access(keyPath: \.loginSuggestionAnswered); return defaults.bool(forKey: Key.loginSuggestionAnswered) }
+        set { withMutation(keyPath: \.loginSuggestionAnswered) { defaults.set(newValue, forKey: Key.loginSuggestionAnswered) } }
     }
 
     var restoreLastState: Bool {

@@ -38,6 +38,29 @@ struct GeneralSettingsView: View {
 
     var body: some View {
         Form {
+            // Asked once, at the only moment it makes sense: the window opens by
+            // itself on first launch, and the switch it refers to is just below.
+            // Consent beats a default — registering a login item unasked is what
+            // App Store review objects to.
+            if !preferences.loginSuggestionAnswered && !preferences.launchAtLogin {
+                Section {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("CleanMenuBar only works while it is running. Open it automatically when you log in?")
+                            .fixedSize(horizontal: false, vertical: true)
+                        HStack {
+                            Spacer()
+                            Button("Not now") { preferences.loginSuggestionAnswered = true }
+                            Button("Turn on") {
+                                preferences.launchAtLogin = true
+                                preferences.loginSuggestionAnswered = true
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                }
+            }
+
             Section {
                 Picker("Language", selection: $language) {
                     ForEach(AppLanguage.allCases) { option in
