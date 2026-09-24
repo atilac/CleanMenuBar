@@ -111,13 +111,63 @@ reviewer who does not know the setup step may conclude it does nothing:
 > see another language, Settings › General › Language lets you pick one; the app
 > restarts to apply it.
 
+## Version numbering
+
+The marketing version matches the GitHub release exactly — **0.1.2** in both
+places — so a bug report naming a version points at one known build regardless
+of where the user got the app.
+
+The *build* number is the one thing that legitimately differs. App Store Connect
+refuses a build number it has already seen, so an upload that gets rejected and
+resubmitted has to increment it while the marketing version stands still. The
+GitHub v0.1.2 tag carries build 3; the first App Store upload of 0.1.2 carries
+build 4, which also picks up `LSApplicationCategoryType` — a key App Store
+Connect requires and that does nothing in a Developer ID build.
+
+## Screenshots
+
+Done: `docs/app-store/screenshots/<locale>/`, three 2880×1800 frames per locale,
+nine locales. Each pair shows the same menu bar before and after hiding, cropped
+to the strip that matters and enlarged, because a full desktop shot renders the
+subject a few pixels tall.
+
+The frames were captured with *Launch at login* and *Show this window at start*
+both switched on. That is deliberate and does not match the shipping defaults —
+it shows the settings window in the state a settled user ends up in, rather than
+mid-onboarding with the login suggestion card still up.
+
+## Remaining steps
+
+Two certificates and an app record are all that stand between here and an
+upload. Everything else is built and verified.
+
+1. **Apple Distribution certificate** — at developer.apple.com, Certificates ›
+   `+` › *Apple Distribution*, upload
+   `~/Developer/CleanMenuBar-signing/appleDistribution.csr`. Download the `.cer`
+   and double-click it.
+2. **Mac Installer Distribution certificate** — same place, *Mac Installer
+   Distribution*, upload
+   `~/Developer/CleanMenuBar-signing/macInstaller.csr`. This one signs the
+   `.pkg`, not the app; without it the package is unsigned and the upload fails.
+3. **App record** — App Store Connect › Apps › `+`, platform **macOS**, primary
+   language **English (U.S.)**, bundle ID `com.atilac.CleanMenuBar`, SKU
+   `cleanmenubar`.
+4. **Build the package** — `Tools/build-appstore-pkg.sh`. It refuses to run
+   until both certificates are in the keychain, so a missing one fails loudly
+   rather than producing a package that dies at upload.
+5. **Upload** — `xcrun altool --upload-app -t macos -f dist/CleanMenuBar.pkg
+   --apiKey ABX25DD23T --apiIssuer <issuer id>`, with `AuthKey_ABX25DD23T.p8`
+   in `~/.appstoreconnect/private_keys/`.
+6. **Fill the listing** — text from `docs/app-store/<locale>.md`, screenshots
+   from `docs/app-store/screenshots/<locale>/`, URLs and questionnaire answers
+   from this file.
+
 ## What still has to be decided
 
-- **Screenshots**: the App Store requires at least one 2880×1800 or 2560×1600
-  screenshot. A menu bar app is hard to show — the interesting part is a 40pt
-  strip at the top of the screen. Before/after pairs of the menu bar, cropped
-  and enlarged, communicate it better than a full desktop shot.
 - **Sandbox vs. the hiding technique**: the technique uses only public
   `NSStatusItem` API and stays inside the sandbox, but macOS 27 shipped no
   supported API for menu bar management. Review could still object. If it does,
   distribution outside the App Store via Developer ID is unaffected.
+- **Price**: the listing is currently set up as free. A paid tier would mean
+  revising the site line that calls the app free and open source, since the
+  GitHub build would stay free either way.

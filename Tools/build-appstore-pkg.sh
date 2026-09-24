@@ -28,13 +28,36 @@ security find-identity -v -p codesigning | grep -q "Apple Distribution" || {
   exit 1
 }
 
+# Checked without -p codesigning: an installer certificate signs packages, not
+# code, so the codesigning policy filters it out and the grep would always fail.
+# Apple renamed this one; both spellings are the same certificate.
+security find-identity -v | grep -qE "3rd Party Mac Developer Installer|Mac Installer Distribution" || {
+  echo "error: no Mac Installer Distribution certificate in the keychain."
+  echo "       Create one at developer.apple.com with the CSR at"
+  echo "       ~/Developer/CleanMenuBar-signing/macInstaller.csr"
+  echo "       It signs the .pkg. Without it the upload fails after the build,"
+  echo "       which wastes the whole archive."
+  exit 1
+}
+
 rm -rf build/appstore dist-appstore
 mkdir -p dist-appstore
+
+# App Store Connect refuses a build number it has already accepted, so a
+# resubmission has to increment while the marketing version stands still.
+# Override with CMB_BUILD=5 Tools/build-appstore-pkg.sh; the default is whatever
+# the project carries.
+BUILD_ARG=""
+if [ -n "$CMB_BUILD" ]; then
+  BUILD_ARG="CURRENT_PROJECT_VERSION=$CMB_BUILD"
+  echo "build number: $CMB_BUILD"
+fi
 
 xcodebuild -project "$APP.xcodeproj" -scheme "$APP" \
            -configuration Release \
            -archivePath build/appstore/"$APP".xcarchive \
            DEVELOPMENT_TEAM="$TEAM_ID" \
+           $BUILD_ARG \
            archive
 
 xcodebuild -exportArchive \
