@@ -32,6 +32,10 @@ struct SettingsView: View {
 }
 
 struct GeneralSettingsView: View {
+    /// The pink from the app icon and the site, so the one card that asks a
+    /// question is recognisably part of the same product.
+    static let brand = Color(red: 0.925, green: 0.282, blue: 0.600)
+
     @Bindable var preferences: Preferences
     @State private var language = AppLanguage.current
     @State private var languageNeedsRelaunch = false
@@ -43,22 +47,44 @@ struct GeneralSettingsView: View {
             // Consent beats a default — registering a login item unasked is what
             // App Store review objects to.
             if !preferences.loginSuggestionAnswered && !preferences.launchAtLogin {
-                Section {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("CleanMenuBar only works while it is running. Open it automatically when you log in?")
-                            .fixedSize(horizontal: false, vertical: true)
-                        HStack {
-                            Spacer()
-                            Button("Not now") { preferences.loginSuggestionAnswered = true }
-                            Button("Turn on") {
-                                preferences.launchAtLogin = true
-                                preferences.loginSuggestionAnswered = true
-                            }
-                            .buttonStyle(.borderedProminent)
+                // No Section wrapper: a Form section draws its own grey frame,
+                // and nesting the tinted card inside it put one rounded
+                // rectangle around another. The card is the block.
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("CleanMenuBar only works while it is running. Open it automatically when you log in?")
+                        .fixedSize(horizontal: false, vertical: true)
+                    HStack {
+                        Spacer()
+                        Button("Not now") { preferences.loginSuggestionAnswered = true }
+                        Button("Turn on") {
+                            preferences.launchAtLogin = true
+                            preferences.loginSuggestionAnswered = true
                         }
+                        .buttonStyle(.borderedProminent)
+                        .tint(Self.brand)
                     }
-                    .padding(.vertical, 4)
                 }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                // Tinted in the app's own pink rather than left in the grey
+                // every other section uses: this card asks a question
+                // instead of showing a setting, and should not read as one
+                // more row. Kept light — a strong fill would look like an
+                // error rather than an offer.
+                //
+                // Painted on the content, not via .listRowBackground: on
+                // macOS a Form ignores that modifier, and the first attempt
+                // left the card the same grey as everything around it.
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(Self.brand.opacity(0.12))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .strokeBorder(Self.brand.opacity(0.40), lineWidth: 1)
+                )
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
             }
 
             Section {
