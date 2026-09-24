@@ -21,8 +21,12 @@ DOWNLOAD = REPO + "/releases/latest"
 # The App Store link resolves only once review approves the app; until then it
 # is a dead end, so the button is built but not rendered. Flip SHOW_APP_STORE
 # when the listing goes live.
+#
+# Submission is waiting on DSA trader verification, which is required for the
+# EU regardless of price and is separate from anything in this repository. The
+# plan after it clears is a paid listing, which is why the label says buy.
 APP_STORE = "https://apps.apple.com/app/id6815842748"
-SHOW_APP_STORE = True
+SHOW_APP_STORE = False
 SITE = "https://monobit.com.br/cleanmenubar"
 ENTITY = "MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA)"
 CONTAINER = "~/Library/Containers/com.monobit.CleanMenuBar/"
