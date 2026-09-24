@@ -53,36 +53,58 @@ enum AppLanguage: String, CaseIterable, Identifiable {
 
     /// The `.lproj` this option resolves to.
     ///
-    /// For `.system` that has to be worked out from the *system's* language list,
-    /// not from `Bundle.main.preferredLocalizations`: the latter reports what was
-    /// resolved at launch, which already includes any override this app itself
-    /// wrote. Reading it while running in a forced language would answer with that
-    /// language instead of the one macOS would actually choose.
+    /// `.system` cannot use `Bundle.main.preferredLocalizations`: that reports
+    /// what was resolved at launch, which already includes any override this app
+    /// wrote, so asking it while running in a forced language answers with that
+    /// forced language. The snapshot above holds the real answer, captured when
+    /// nothing was being forced.
     private var resolvedCode: String {
         guard self == .system else { return rawValue }
-        let systemPreferences = UserDefaults.standard
-            .persistentDomain(forName: UserDefaults.globalDomain)?[Self.key] as? [String]
-            ?? ["en"]
-        return Bundle.preferredLocalizations(from: Bundle.main.localizations,
-                                             forPreferences: systemPreferences).first ?? "en"
+        return UserDefaults.standard.string(forKey: Self.snapshotKey)
+            ?? Bundle.main.preferredLocalizations.first
+            ?? "en"
     }
 
+    /// macOS reads this at launch to decide the bundle's language.
     private static let key = "AppleLanguages"
+    /// Our own record of whether *we* forced a language. Needed because
+    /// `UserDefaults` answers `AppleLanguages` from the global domain when the
+    /// app has not set it, so that key can never be used to tell the two apart.
+    private static let overrideKey = "forcedLanguage"
+    private static let snapshotKey = "systemLanguageSnapshot"
+
+    /// Records what macOS resolves to while no override of ours is in place.
+    ///
+    /// Reading the system's own language list directly means reaching into the
+    /// global preferences domain, which lives outside the sandbox container. On
+    /// macOS 27 that raises "CleanMenuBar tried to access your data from other
+    /// apps" — a privacy warning shown to every user, for a cosmetic detail, and
+    /// one that contradicts what this app promises.
+    ///
+    /// So instead: whenever the app launches with no override, whatever it
+    /// resolved to *is* the system's answer. Remember it, in our own container.
+    /// It refreshes on every unforced launch, so changing the macOS language
+    /// updates it the next time the user is not overriding anything.
+    static func refreshSystemSnapshot() {
+        guard UserDefaults.standard.string(forKey: overrideKey) == nil,
+              let resolved = Bundle.main.preferredLocalizations.first
+        else { return }
+        UserDefaults.standard.set(resolved, forKey: snapshotKey)
+    }
 
     /// The language currently forced, or `.system` when following macOS.
     static var current: AppLanguage {
-        guard let forced = UserDefaults.standard.stringArray(forKey: key)?.first else { return .system }
-        return AppLanguage(rawValue: forced)
-            // A stored "pt-BR" can come back canonicalised, so match on the prefix.
-            ?? AppLanguage.allCases.first { $0 != .system && forced.hasPrefix($0.rawValue.prefix(2)) }
-            ?? .system
+        guard let forced = UserDefaults.standard.string(forKey: overrideKey) else { return .system }
+        return AppLanguage(rawValue: forced) ?? .system
     }
 
     static func select(_ language: AppLanguage) {
         if language == .system {
             UserDefaults.standard.removeObject(forKey: key)
+            UserDefaults.standard.removeObject(forKey: overrideKey)
         } else {
             UserDefaults.standard.set([language.rawValue], forKey: key)
+            UserDefaults.standard.set(language.rawValue, forKey: overrideKey)
         }
         UserDefaults.standard.synchronize()
     }

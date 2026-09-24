@@ -69,3 +69,16 @@ would require a new release — and the source diff would show it.
 
 MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA)
 apps@monobit.com.br
+
+## A note on macOS 27 privacy warnings
+
+An early build read the system's language list from the global preferences
+domain, which sits outside the app's sandbox container, and macOS 27 reported it
+as "CleanMenuBar tried to access your data from other apps". It was reading a
+language setting, nothing personal — but the warning was accurate about the
+boundary being crossed, and the boundary should not have been crossed.
+
+It was removed before the first release. The app now records what macOS resolved
+to on a launch where nothing was overriding it, keeping that inside its own
+container. If you ever see such a warning from CleanMenuBar, treat it as a bug
+and report it.

@@ -1,0 +1,135 @@
+2026-09-24 16:33:51 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7511e72400; archive(resolved)="<IDEArchive: 0x7511cf1c00>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodDeveloperID: 0x750f554600>", team(resolved)="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	Chain (12, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7511e72400; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0x7511e72100; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48e300; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48de00; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48db80; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48d900; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48ca00; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48c780; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48c500; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="<IDEProvisioningBasicTeam: 0x7511e4c420; teamID='NP9YTUN8LD', teamName='(null)'>">
+	<IDEDistributionContext: 0x750f48c280; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="(null)">
+	<IDEDistributionContext: 0x750f48c000; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="<IDEDistributionMethodDeveloperID: 0x750f554600>", team="(null)">
+	<IDEDistributionContext: 0x104a9dcb0; archive = "<IDEArchive: 0x7511cf1c00>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7511e72400>
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-09-24 16:33:51 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app' '/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app'
+2026-09-24 16:33:51 +0000  >>> Copying /Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app 
+2026-09-24 16:33:51 +0000  copying file ./Contents/_CodeSignature/CodeResources ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/_CodeSignature/CodeResources
+2026-09-24 16:33:51 +0000  copying file ./Contents/MacOS/CleanMenuBar ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/MacOS/CleanMenuBar
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/de.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/de.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/de.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/de.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/zh-Hans.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/zh-Hans.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/zh-Hans.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/zh-Hans.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/ja.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/ja.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/ja.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/ja.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/en.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/en.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/en.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/en.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/LICENSE ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/LICENSE
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/es-ES.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/es-ES.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/es-ES.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/es-ES.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/AppIcon.icns ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/AppIcon.icns
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/zh-Hant.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/zh-Hant.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/zh-Hant.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/zh-Hant.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/NOTICE ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/NOTICE
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/Assets.car ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/Assets.car
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/pt-BR.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/pt-BR.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/pt-BR.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/pt-BR.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/ru.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/ru.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/ru.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/ru.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/fr.lproj/Localizable.strings ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/fr.lproj/Localizable.strings
+2026-09-24 16:33:51 +0000  copying file ./Contents/Resources/fr.lproj/Localizable.stringsdict ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Resources/fr.lproj/Localizable.stringsdict
+2026-09-24 16:33:51 +0000  copying file ./Contents/Info.plist ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/Info.plist
+2026-09-24 16:33:51 +0000  copying file ./Contents/PkgInfo ... 
+2026-09-24 16:33:51 +0000  hardlinked ./Contents/PkgInfo
+2026-09-24 16:33:51 +0000 [MT] /usr/bin/ditto exited with 0
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-09-24 16:33:51 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x750f550b40; bundleID='com.atilac.CleanMenuBar', path='<DVTFilePath:0x7511cf1c70:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x750f550ae0; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.atilac.CleanMenuBar', executablePath='<DVTFilePath:0x750fa0bea0:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'>
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-09-24 16:33:51 +0000 [MT] Skipping step: IDEDistributionInfoPlistStep because it said so
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-09-24 16:33:51 +0000 [MT] Skipping step: IDEDistributionSymbolsStep because it said so
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-09-24 16:33:51 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-09-24 16:33:51 +0000 [MT] Archs to thin for item /Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app are []
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-09-24 16:33:51 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-09-24 16:33:51 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-09-24 16:33:51 +0000 [MT] Entitlements for <IDEDistributionItem: 0x750f550b40; bundleID='com.atilac.CleanMenuBar', path='<DVTFilePath:0x7511cf1c70:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x750f550ae0; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.atilac.CleanMenuBar', executablePath='<DVTFilePath:0x750fa0bea0:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'>: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}
+2026-09-24 16:33:51 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-09-24 16:33:51 +0000 [MT] Entitlements for <IDEDistributionItem: 0x750f550b40; bundleID='com.atilac.CleanMenuBar', path='<DVTFilePath:0x7511cf1c70:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x750f550ae0; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.atilac.CleanMenuBar', executablePath='<DVTFilePath:0x750fa0bea0:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'> are: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}
+2026-09-24 16:33:51 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x750f550b40; bundleID='com.atilac.CleanMenuBar', path='<DVTFilePath:0x7511cf1c70:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x750f550ae0; isSigned='1', isAdHocSigned='1', signingCertificate='(null)', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}', teamID='(null)', identifier='com.atilac.CleanMenuBar', executablePath='<DVTFilePath:0x750fa0bea0:'/Users/atilac/dev/cleanmenubar/build/CleanMenuBar.xcarchive/Products/Applications/CleanMenuBar.app/Contents/MacOS/CleanMenuBar'>', hardenedRuntime='1'>'> to: /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/entitlements~~~Z4w72u
+2026-09-24 16:33:51 +0000 [MT] invoking codesign: <NSConcreteTask: 0x750f6cd180; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    DCA3869AA23D940641A8FF925250C43F466408D8,
+    "--entitlements",
+    "/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/entitlements~~~Z4w72u",
+    "--requirements",
+    "=designated => anchor apple generic  and identifier \"$self.identifier\" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = \"NP9YTUN8LD\" ))",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app"
+)'>
+2026-09-24 16:33:52 +0000 [MT] codesign output: /var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app: replacing existing signature
+/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app: signed app bundle with Mach-O universal (x86_64 arm64) [com.atilac.CleanMenuBar]
+2026-09-24 16:33:52 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-09-24 16:33:52 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-09-24 16:33:52 +0000 [MT] Processing step: IDEDistributionSkipPackagingStep
+2026-09-24 16:33:52 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-09-24 16:33:52 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-09-24 16:33:52 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-09-24 16:33:52 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x751243c1c0:'/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app'>
+2026-09-24 16:33:52 +0000 [MT] [OPTIONAL] Didn't find embedded provisioning profile for <DVTFilePath:0x751243c1c0:'/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app'>: Error Domain=NSCocoaErrorDomain Code=4 "No file at <DVTFilePath:0x751243c620:'/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app/Contents/embedded.provisionprofile'>" UserInfo={NSLocalizedDescription=No file at <DVTFilePath:0x751243c620:'/var/folders/b3/znfbjh5d5zl_4qtyfg887zjw0000gn/T/XcodeDistPipeline.~~~beKlE0/Root/Applications/CleanMenuBar.app/Contents/embedded.provisionprofile'>}
+2026-09-24 16:33:52 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2026-09-24 16:33:52 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so

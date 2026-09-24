@@ -19,6 +19,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var diagnosticsSource: (any DispatchSourceSignal)?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Before anything can force a language, record what macOS chose on its own.
+        AppLanguage.refreshSystemSnapshot()
+
         let preferences = Preferences.shared
         let controller = StatusBarController(preferences: preferences)
         self.controller = controller
