@@ -82,15 +82,16 @@ struct GeneralSettingsView: View {
             Section {
                 Toggle("Enable the always-hidden section", isOn: $preferences.alwaysHiddenSectionEnabled)
                 Toggle("Hide the separators", isOn: $preferences.separatorsHidden)
-                Toggle("Use the full menu bar when expanding", isOn: $preferences.useFullStatusBarOnExpand)
                 Toggle("Restore the last state at launch", isOn: $preferences.restoreLastState)
             } footer: {
-                Text("Hiding the separators also makes them impossible to ⌘-drag, so arrange your icons first.")
+                Text("Turning on the always-hidden section reveals it so you can ⌘-drag icons to the left of its faint separator; it hides again on the next collapse. Hiding the separators also makes them impossible to ⌘-drag, so arrange your icons first.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
             }
 
             Section {
+                PlannedToggle("Use the full menu bar when expanding",
+                              issue: "become the active app while expanded, so its near-empty menus free the width the frontmost app's menus occupy — macOS 27 refuses the activation")
                 PlannedToggle("Keep CleanMenuBar in the Dock",
                               issue: "shows a Dock icon instead of running as a menu bar-only app")
                 PlannedToggle("Show a visual guide in this window",

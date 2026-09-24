@@ -38,6 +38,11 @@ final class StatusBarController {
     private let alwaysHiddenPusherItem: NSStatusItem
 
     private var autoCollapseTimer: Timer?
+    /// Not `lazy`: a lazy property initialises on first read, which here is
+    /// inside preferencesChanged() — after the value it is meant to remember has
+    /// already changed. It would always start out equal to the new value and the
+    /// comparison could never fire.
+    private var wasAlwaysHiddenEnabled: Bool
     private var hoverMonitor: Any?
     private var hoverDwellTimer: Timer?
 
@@ -59,6 +64,7 @@ final class StatusBarController {
 
     init(preferences: Preferences = .shared) {
         self.preferences = preferences
+        self.wasAlwaysHiddenEnabled = preferences.alwaysHiddenSectionEnabled
         let bar = NSStatusBar.system
         toggleItem = bar.statusItem(withLength: NSStatusItem.variableLength)
         pusherItem = bar.statusItem(withLength: NSStatusItem.variableLength)
@@ -152,17 +158,27 @@ final class StatusBarController {
                 ? String(localized: "Expand hidden menu bar items")
                 : String(localized: "Collapse menu bar items"))
 
-        // A pusher's glyph must go while it is inflated. A status item button
-        // centres its image in the item's width, so leaving the handle in place
-        // paints it in the middle of a 736pt-wide item — which lands over by
-        // Spotlight and reads as a stray mark flickering in the menu bar.
-        pusherItem.button?.image = isInflated(pusherItem) ? nil : Self.handleImage()
-        alwaysHiddenPusherItem.button?.image =
-            isInflated(alwaysHiddenPusherItem) ? nil : Self.handleImage(translucent: true)
+        // Never set `isVisible = false` on a pusher. That removes the item from
+        // the menu bar altogether, and an item that is not in the bar cannot
+        // push — so "Hide the separators" silently turned hiding off entirely.
+        // Hiding a separator means clearing its glyph, not removing the item.
+        //
+        // The glyph also has to go while a pusher is inflated: a status item
+        // button centres its image in the item's width, so leaving the handle in
+        // place paints it in the middle of a 736pt-wide item, which lands over by
+        // Spotlight and reads as a stray mark in the menu bar.
+        let hideGlyphs = preferences.separatorsHidden
 
-        pusherItem.isVisible = !preferences.separatorsHidden
-        alwaysHiddenPusherItem.isVisible =
-            preferences.alwaysHiddenSectionEnabled && !preferences.separatorsHidden
+        pusherItem.isVisible = true
+        pusherItem.button?.image =
+            (isInflated(pusherItem) || hideGlyphs) ? nil : Self.handleImage()
+
+        // The always-hidden pusher is the one that may legitimately leave the
+        // bar: with its section switched off it has nothing to push.
+        alwaysHiddenPusherItem.isVisible = preferences.alwaysHiddenSectionEnabled
+        alwaysHiddenPusherItem.button?.image =
+            (isInflated(alwaysHiddenPusherItem) || hideGlyphs)
+                ? nil : Self.handleImage(translucent: true)
     }
 
     private func isInflated(_ item: NSStatusItem) -> Bool {
@@ -197,8 +213,16 @@ final class StatusBarController {
     }
 
     /// "Use the full menu bar when expanding": becoming the active regular app
-    /// replaces the frontmost app's menus with CleanMenuBar's near-empty one,
-    /// which frees the horizontal space those menus were occupying.
+    /// would replace the frontmost app's menus with CleanMenuBar's near-empty
+    /// one, freeing the width those menus occupy.
+    ///
+    /// It does not work on macOS 27. The activation policy changes, but the
+    /// system refuses the activation itself — measured with a real click, not
+    /// just a scripted one: `activationPolicy=0 isActive=false frontmost=Safari`.
+    /// Apple restricted background apps from taking focus, and without being
+    /// frontmost there is nothing to shrink. Kept switched off and listed under
+    /// Planned rather than removed, so the intent survives if a supported way
+    /// appears.
     private func applyFullStatusBarPolicy() {
         guard preferences.useFullStatusBarOnExpand else { return }
         if state == .collapsed {
@@ -395,6 +419,19 @@ final class StatusBarController {
     /// Re-read preferences that change what is on screen or which monitors run.
     func preferencesChanged() {
         installHoverMonitorIfEnabled()
+
+        // Switching the always-hidden section on reveals it, because otherwise
+        // nothing visible happens: its separator is inflated whenever the
+        // section is doing its job, and an inflated item draws no glyph. The
+        // user would be told to drag icons past a separator they cannot see.
+        let enabled = preferences.alwaysHiddenSectionEnabled
+        if enabled, !wasAlwaysHiddenEnabled {
+            state = .allRevealed
+        } else if !enabled, state == .allRevealed {
+            state = .expanded
+        }
+        wasAlwaysHiddenEnabled = enabled
+
         applyState()
     }
 }

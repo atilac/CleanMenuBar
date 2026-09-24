@@ -17,6 +17,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var hotKeys: HotKeyManager?
     private var signalSource: (any DispatchSourceSignal)?
     private var diagnosticsSource: (any DispatchSourceSignal)?
+    private var alwaysHiddenSource: (any DispatchSourceSignal)?
+    private var reloadSource: (any DispatchSourceSignal)?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Before anything can force a language, record what macOS chose on its own.
@@ -58,6 +60,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         installDebugToggleSignal(controller)
         installDiagnosticsSignal(controller, preferences)
+        installAlwaysHiddenSignal(controller)
+        installReloadSignal(controller)
     }
 
     /// `kill -USR1 <pid>` toggles the bar. The menu bar cannot be driven by UI
@@ -88,6 +92,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                   + "chosen=\(Bundle.main.preferredLocalizations) "
                   + "sample=\(String(localized: "Quit"))")
             print("DIAG activationPolicy=\(NSApp.activationPolicy().rawValue) "
+                  + "isActive=\(NSApp.isActive) "
+                  + "frontmost=\(NSWorkspace.shared.frontmostApplication?.localizedName ?? "?") "
                   + "settingsWindowVisible=\(SettingsWindowController.shared.isVisible) "
                   + "loginItem=\(LaunchAtLogin.isEnabled) "
                   + "shortcut=\(preferences.globalShortcut?.displayString ?? "none") "
@@ -97,6 +103,35 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         source.resume()
         diagnosticsSource = source
         signal(SIGUSR2, SIG_IGN)
+    }
+
+    /// `kill -INFO <pid>` toggles the always-hidden section. Reaching it normally
+    /// means right-clicking a menu bar item, which no script can do.
+    private func installAlwaysHiddenSignal(_ controller: StatusBarController) {
+        let source = DispatchSource.makeSignalSource(signal: SIGINFO, queue: .main)
+        source.setEventHandler { [weak controller] in
+            guard let controller else { return }
+            controller.toggleAlwaysHiddenSection()
+            print("SIGINFO -> state=\(controller.state)")
+            fflush(stdout)
+        }
+        source.resume()
+        alwaysHiddenSource = source
+        signal(SIGINFO, SIG_IGN)
+    }
+
+    /// `kill -HUP <pid>` re-reads preferences, the Unix convention for reload.
+    /// Also stops SIGHUP from killing the app, which is its default action.
+    private func installReloadSignal(_ controller: StatusBarController) {
+        let source = DispatchSource.makeSignalSource(signal: SIGHUP, queue: .main)
+        source.setEventHandler { [weak controller] in
+            controller?.preferencesChanged()
+            print("SIGHUP -> preferences reloaded")
+            fflush(stdout)
+        }
+        source.resume()
+        reloadSource = source
+        signal(SIGHUP, SIG_IGN)
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool { true }
