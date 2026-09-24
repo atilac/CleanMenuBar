@@ -7,7 +7,7 @@ Em revisão. Os limites de caracteres são da Apple e são rígidos.
 
 ## Nome (30)
 
-CleanMenuBar
+CleanMenuBar: Ocultar Ícones
 
 ## Subtítulo (30)
 
