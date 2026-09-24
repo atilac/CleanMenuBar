@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build:
     name: Build
-    runs-on: macos-26
+    runs-on: macos-27
     steps:
       - uses: actions/checkout@v4
 
@@ -53,7 +53,7 @@ jobs:
 
   localization:
     name: Localization
-    runs-on: macos-26
+    runs-on: macos-27
     steps:
       - uses: actions/checkout@v4
 

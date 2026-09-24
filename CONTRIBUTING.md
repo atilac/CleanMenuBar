@@ -12,7 +12,7 @@ cd CleanMenuBar
 open CleanMenuBar.xcodeproj
 ```
 
-Requirements: macOS 26 or later, Xcode 26 or later.
+Requirements: macOS 27 or later, Xcode 27 or later.
 
 There is no dependency manager and no code generation step — open the project
 and build. The app target uses an Xcode *synchronized folder group*, which means

@@ -124,9 +124,28 @@ final class StatusBarController {
     /// once the user is done arranging things.
     private static func handleImage(translucent: Bool = false) -> NSImage {
         let image = NSImage(size: NSSize(width: 5, height: 13), flipped: false) { rect in
-            let bar = NSRect(x: rect.midX - 1, y: rect.minY, width: 2, height: rect.height)
-            NSColor.black.withAlphaComponent(translucent ? 0.35 : 1).setFill()
-            NSBezierPath(roundedRect: bar, xRadius: 1, yRadius: 1).fill()
+            NSColor.black.setFill()
+            let x = rect.midX - 1
+            guard translucent else {
+                // The normal separator: one continuous stroke.
+                NSBezierPath(roundedRect: NSRect(x: x, y: rect.minY, width: 2, height: rect.height),
+                             xRadius: 1, yRadius: 1).fill()
+                return true
+            }
+            // The always-hidden separator: dotted, so it reads as a different
+            // kind of marker rather than a dimmer copy of the normal one.
+            // Opacity alone is too weak a signal — on a light menu bar it looks
+            // like a rendering artefact.
+            //
+            // Four dots of 2pt with 1.67pt gaps fills 13pt exactly. Fewer, larger
+            // dots would read as debris at this size; more would blur together.
+            let dot: CGFloat = 2
+            let count = 4
+            let gap = (rect.height - dot * CGFloat(count)) / CGFloat(count - 1)
+            for i in 0..<count {
+                let y = rect.minY + (dot + gap) * CGFloat(i)
+                NSBezierPath(ovalIn: NSRect(x: x, y: y, width: dot, height: dot)).fill()
+            }
             return true
         }
         image.isTemplate = true

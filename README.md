@@ -7,7 +7,7 @@
 **Hide the menu bar icons you don't want to look at — on macOS 27.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![macOS 26+](https://img.shields.io/badge/macOS-26%2B-black.svg)](#requirements)
+[![macOS 27+](https://img.shields.io/badge/macOS-27%2B-black.svg)](#requirements)
 
 </div>
 
@@ -87,7 +87,12 @@ see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Requirements
 
-macOS 26 or later. Apple Silicon and Intel.
+macOS 27 or later. Apple Silicon and Intel.
+
+macOS 26 is deliberately not supported. The hiding mechanism here is calibrated
+against behaviour macOS 27 introduced, and has never been tested on 26 — where
+the older technique still works and Hidden Bar still does the job. Claiming 26
+without testing it would be a promise this project cannot keep.
 
 ## Building
 
