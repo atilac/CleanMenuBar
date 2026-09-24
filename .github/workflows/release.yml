@@ -121,7 +121,10 @@ jobs:
           hdiutil create -volname CleanMenuBar -srcfolder staging -ov -format UDZO \
                          dist/CleanMenuBar.dmg
           ditto -c -k --keepParent dist-app/CleanMenuBar.app dist/CleanMenuBar.zip
-          shasum -a 256 dist/* > dist/SHA256SUMS.txt
+          # Record bare filenames, not paths. `shasum dist/*` writes "dist/x.dmg",
+          # and anyone verifying a downloaded file sits in a flat folder where
+          # that path does not exist — the check fails for everyone.
+          ( cd dist && shasum -a 256 CleanMenuBar.dmg CleanMenuBar.zip > SHA256SUMS.txt )
           cat dist/SHA256SUMS.txt
 
       - uses: softprops/action-gh-release@v2
