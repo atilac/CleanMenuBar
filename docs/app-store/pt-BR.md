@@ -64,6 +64,8 @@ O macOS 27 reconstruiu a barra de menus como uma única janela, e a técnica que
 
 Versões anteriores do macOS não são compatíveis — e não precisam ser: nelas a técnica antiga ainda funciona.
 
+Como o macOS 27 não roda em Macs Intel, o CleanMenuBar exige Apple Silicon.
+
 CÓDIGO ABERTO
 
 O código-fonte completo está publicado sob Licença MIT, incluindo o arquivo que declara exatamente o que o app tem permissão de fazer. Você não precisa acreditar em nada acima — pode verificar.

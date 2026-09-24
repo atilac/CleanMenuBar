@@ -87,7 +87,8 @@ see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Requirements
 
-macOS 27 or later. Apple Silicon and Intel.
+macOS 27 or later, which means Apple Silicon: macOS 27 does not run on Intel
+Macs, so the build produces an arm64 binary and nothing else.
 
 macOS 26 is deliberately not supported. The hiding mechanism here is calibrated
 against behaviour macOS 27 introduced, and has never been tested on 26 — where
