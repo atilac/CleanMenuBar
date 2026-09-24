@@ -240,6 +240,22 @@ changed in the web interface, and the export relies on the Apple ID signed into
 Xcode instead. Raising the key's role in *Users and Access › Integrations*
 would remove both restrictions.
 
+### The two API keys
+
+Neither is named after a project, because neither is scoped to one: a key
+belongs to the team and reaches every app in it.
+
+| Key | Access | What breaks if it is revoked |
+|---|---|---|
+| `ABX25DD23T` | Developer | Notarisation in CI — it is in the repository secrets |
+| `H62S9X5DTG` | App Manager | Pushing listing text and screenshots from here |
+
+Both live in `~/Developer/CleanMenuBar-signing/`, alongside the certificates.
+That directory name is a leftover: nothing in it is specific to this app.
+
+Apple serves a `.p8` once and never again, so losing one means revoking,
+generating a replacement, and updating the GitHub secrets.
+
 ### Trader status
 
 App Store Connect will not accept a submission until *Business › Trader Status*

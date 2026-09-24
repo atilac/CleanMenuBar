@@ -68,6 +68,23 @@ h1 { font-size: 2.6rem; letter-spacing: -.03em; margin: 0 0 .4rem; }
   box-shadow: 0 8px 24px -10px rgba(236, 72, 153, .7);
 }
 .download:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -10px rgba(236,72,153,.85); }
+
+/* Wraps rather than shrinks: the two labels are long in German and Russian,
+   and a row that squeezes them onto one line on a phone reads worse than two
+   full-width buttons. */
+.actions {
+  display: flex; flex-wrap: wrap; gap: .75rem;
+  align-items: center; justify-content: center;
+}
+.appstore {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: linear-gradient(135deg, #0a84ff, #0060df);
+  color: #fff; text-decoration: none; font-weight: 600;
+  padding: .85rem 1.9rem; border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 24px -10px rgba(10, 132, 255, .7);
+}
+.appstore:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -10px rgba(10,132,255,.85); }
 .requirements { color: var(--muted); font-size: .875rem; margin-top: .9rem; }
 
 /* ---------- content ---------- */

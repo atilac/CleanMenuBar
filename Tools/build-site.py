@@ -18,6 +18,11 @@ from site_content import C, LANGUAGES, UPDATED
 OUT = "site"
 REPO = "https://github.com/atilac/CleanMenuBar"
 DOWNLOAD = REPO + "/releases/latest"
+# The App Store link resolves only once review approves the app; until then it
+# is a dead end, so the button is built but not rendered. Flip SHOW_APP_STORE
+# when the listing goes live.
+APP_STORE = "https://apps.apple.com/app/id6815842748"
+SHOW_APP_STORE = True
 SITE = "https://monobit.com.br/cleanmenubar"
 ENTITY = "MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA)"
 CONTAINER = "~/Library/Containers/com.monobit.CleanMenuBar/"
@@ -133,7 +138,10 @@ def index(code, t, depth):
   <div class="icon">{ICON_SVG}</div>
   <h1>CleanMenuBar</h1>
   <p class="tagline">{t['tagline']}</p>
-  <a class="download" href="{DOWNLOAD}">{t['download']}</a>
+  <div class="actions">
+    <a class="download" href="{DOWNLOAD}">{t['download']}</a>
+    {f'<a class="appstore" href="{APP_STORE}">{t["appstore"]}</a>' if SHOW_APP_STORE else ''}
+  </div>
   <p class="requirements">{t['requirements']}</p>
   {language_switcher(code, 'index.html', depth)}
 </header>
