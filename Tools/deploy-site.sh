@@ -5,16 +5,17 @@
 #   ssh-keygen -t ed25519 -f ~/.ssh/hostgator -N ""
 #   ssh-copy-id -i ~/.ssh/hostgator.pub -p 22 atilav48@ftp.atilac.net
 #
-# --delete makes the server match site/ exactly, so files removed from the
-# generator disappear upstream instead of lingering. README.md is excluded
-# because it documents the build for contributors and has no business being
-# served; it is removed from the server separately if it ever lands there.
+# --delete makes the server match site/ exactly, so anything removed from the
+# generator disappears upstream instead of lingering. There are no exclusions:
+# build-site.py refuses to finish if site/ holds anything that is not meant to
+# be served, so the folder and the published site are the same thing by
+# construction. Documentation about the site lives in docs/site-build.md.
 set -e
 
 cd "$(dirname "$0")/.."
 python3 Tools/build-site.py
 
-rsync -az --delete --exclude 'README.md' \
+rsync -az --delete \
   -e "ssh -i ~/.ssh/hostgator -p 22" \
   site/ atilav48@ftp.atilac.net:monobit.com.br/cleanmenubar/
 

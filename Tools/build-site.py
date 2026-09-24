@@ -269,6 +269,20 @@ def main():
                 f.write(render(code, t, depth))
         print(f"  {code:8s} -> {directory}/")
 
+    # Everything in site/ gets published verbatim, so nothing that is not meant
+    # for the public may live there. Documentation belongs in docs/.
+    publishable = {".html", ".css", ".svg", ".png", ".ico", ".txt", ".webmanifest"}
+    strays = sorted(
+        os.path.join(root, name)
+        for root, _, names in os.walk(OUT)
+        for name in names
+        if os.path.splitext(name)[1].lower() not in publishable
+    )
+    if strays:
+        for path in strays:
+            print(f"  not publishable: {path}", file=sys.stderr)
+        sys.exit("site/ may contain only files meant to be served")
+
     print(f"\n  {len(LANGUAGES)} languages x 3 pages = {len(LANGUAGES) * 3} files")
 
 
