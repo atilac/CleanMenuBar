@@ -30,7 +30,7 @@ final class StatusBarController {
         case allRevealed   // the always-hidden section is showing too
     }
 
-    private let logger = Logger(subsystem: "com.atilac.CleanMenuBar", category: "StatusBar")
+    private let logger = Logger(subsystem: "com.monobit.CleanMenuBar", category: "StatusBar")
     private let preferences: Preferences
 
     private let toggleItem: NSStatusItem

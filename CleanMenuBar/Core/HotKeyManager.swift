@@ -11,7 +11,7 @@ import OSLog
 final class HotKeyManager {
     private static let signature = OSType(0x434D4252)  // 'CMBR'
 
-    private let logger = Logger(subsystem: "com.atilac.CleanMenuBar", category: "HotKey")
+    private let logger = Logger(subsystem: "com.monobit.CleanMenuBar", category: "HotKey")
     // Opaque Carbon pointers. They are only ever touched on the main actor plus
     // once from deinit, which Swift 6 cannot prove — hence the explicit opt-out.
     private nonisolated(unsafe) var hotKeyRef: EventHotKeyRef?

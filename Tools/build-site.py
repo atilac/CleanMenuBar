@@ -20,7 +20,7 @@ REPO = "https://github.com/atilac/CleanMenuBar"
 DOWNLOAD = REPO + "/releases/latest"
 SITE = "https://monobit.com.br/cleanmenubar"
 ENTITY = "MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA)"
-CONTAINER = "~/Library/Containers/com.atilac.CleanMenuBar/"
+CONTAINER = "~/Library/Containers/com.monobit.CleanMenuBar/"
 
 ICON_SVG = """<svg viewBox="0 0 100 100" aria-hidden="true">
       <!-- The same geometry Tools/GenerateAppIcon.swift draws: a C cut in three

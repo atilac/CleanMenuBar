@@ -4,7 +4,7 @@ import OSLog
 /// Launch-at-login, via `SMAppService`. Works inside the App Sandbox and needs
 /// no helper bundle or entitlement.
 enum LaunchAtLogin {
-    private static let logger = Logger(subsystem: "com.atilac.CleanMenuBar", category: "LaunchAtLogin")
+    private static let logger = Logger(subsystem: "com.monobit.CleanMenuBar", category: "LaunchAtLogin")
 
     static var isEnabled: Bool {
         SMAppService.mainApp.status == .enabled

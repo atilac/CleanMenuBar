@@ -9,7 +9,7 @@ Kept here so the answers stay consistent between submissions.
 |---|---|
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
 | Team ID | NP9YTUN8LD |
-| Bundle ID | com.atilac.CleanMenuBar |
+| Bundle ID | com.monobit.CleanMenuBar |
 | **Primary language** | **English (U.S.)** |
 | Category | Utilities |
 | Price | Free |
@@ -113,16 +113,15 @@ reviewer who does not know the setup step may conclude it does nothing:
 
 ## Version numbering
 
-The marketing version matches the GitHub release exactly — **0.1.2** in both
+The marketing version matches the GitHub release exactly — **0.1.3** in both
 places — so a bug report naming a version points at one known build regardless
 of where the user got the app.
 
 The *build* number is the one thing that legitimately differs. App Store Connect
 refuses a build number it has already seen, so an upload that gets rejected and
-resubmitted has to increment it while the marketing version stands still. The
-GitHub v0.1.2 tag carries build 3; the first App Store upload of 0.1.2 carries
-build 4, which also picks up `LSApplicationCategoryType` — a key App Store
-Connect requires and that does nothing in a Developer ID build.
+resubmitted has to increment it while the marketing version stands still.
+0.1.3 carries build 4 in both places; the first resubmission, should there be
+one, would be build 5 under the same 0.1.3.
 
 ## Screenshots
 
@@ -186,7 +185,7 @@ and the dropdown in step 4 simply comes up empty without it.
 1. Open <https://developer.apple.com/account/resources/identifiers/list>
 2. **+** › **App IDs** › **Continue** › type **App** › **Continue**
 3. Description: `CleanMenuBar`
-4. Bundle ID: **Explicit**, `com.atilac.CleanMenuBar`
+4. Bundle ID: **Explicit**, `com.monobit.CleanMenuBar`
 5. Capabilities: leave every box unchecked. App Sandbox is declared in the
    entitlements file, not here, and the app uses nothing that needs enabling.
 6. **Continue** › **Register**
@@ -200,7 +199,7 @@ and the dropdown in step 4 simply comes up empty without it.
    error here means the name is taken and the listing needs a different one
 5. Primary Language: **English (U.S.)** — see the Identity section above for why
    this is not Portuguese
-6. Bundle ID: `com.atilac.CleanMenuBar`, which appears in the dropdown a few
+6. Bundle ID: `com.monobit.CleanMenuBar`, which appears in the dropdown a few
    minutes after step 3
 7. SKU: `cleanmenubar` — internal only, never shown to anyone
 8. User Access: **Full Access**

@@ -9,7 +9,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 APP=build/Build/Products/Debug/CleanMenuBar.app/Contents/MacOS/CleanMenuBar
-DOMAIN=~/Library/Containers/com.atilac.CleanMenuBar/Data/Library/Preferences/com.atilac.CleanMenuBar
+DOMAIN=~/Library/Containers/com.monobit.CleanMenuBar/Data/Library/Preferences/com.monobit.CleanMenuBar
 OUT=docs/app-store/screenshots
 WORK=$(mktemp -d)
 trap 'rm -rf "$WORK"' EXIT

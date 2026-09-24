@@ -1,6 +1,6 @@
 # App Store — de
 
-**Version 0.1.2** — same number as the GitHub release, deliberately: one
+**Version 0.1.3** — same number as the GitHub release, deliberately: one
 number, one binary, one set of changes, wherever someone finds the app.
 
 ## Name (30)

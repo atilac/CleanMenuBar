@@ -21,7 +21,7 @@ after how long — are written to macOS's standard preferences store, inside the
 app's own sandbox container:
 
 ```
-~/Library/Containers/com.atilac.CleanMenuBar/
+~/Library/Containers/com.monobit.CleanMenuBar/
 ```
 
 This stays on your Mac. It is not transmitted, not backed up by us, and not
