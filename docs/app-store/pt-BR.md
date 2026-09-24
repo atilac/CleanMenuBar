@@ -25,9 +25,10 @@ esconder,ocultar,ícones,menubar,status,limpar,arrumar,produtividade,notch,atalh
 
 ## Texto promocional (170)
 
-> Pendente de revisão. Único campo alterável sem reenviar o app.
+> Único campo alterável sem reenviar o app. Reescrito para não repetir o
+> subtítulo, que já diz "Organize sua barra de menus".
 
-Sua barra de menus com só o que importa. Esconda os ícones que você não usa, revele quando precisar. Sem permissões, sem coleta de dados, código aberto.
+Esconda os ícones que você não usa e revele quando precisar. Sem permissões, sem coleta de dados, sem rede. Código aberto sob Licença MIT.
 
 ## Descrição (4000)
 
