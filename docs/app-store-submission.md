@@ -9,6 +9,7 @@ Kept here so the answers stay consistent between submissions.
 |---|---|
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
 | Company Name (macOS listing) | Monobit |
+| Store name | CleanMenuBar: Hide Icons |
 | Team ID | NP9YTUN8LD |
 | Bundle ID | com.monobit.CleanMenuBar |
 | **Primary language** | **English (U.S.)** |
@@ -202,8 +203,15 @@ and the dropdown in step 4 simply comes up empty without it.
    information, which comes from the account rather than from here. Worth
    getting right the first time, since changing it later tends to mean a support
    request rather than a free edit.
-5. Name: `CleanMenuBar` — this has to be unique across the whole store, so an
-   error here means the name is taken and the listing needs a different one
+5. Name: `CleanMenuBar: Hide Icons`. Plain `CleanMenuBar` is reserved by
+   someone who never shipped under it — a search of the Mac App Store turns up
+   no such app — and Apple holds a reserved name for as long as the record
+   exists. The trademark claim the error offers is not a route without a
+   registered mark.
+
+   Only the storefront name changed. The app is still CleanMenuBar in the Dock,
+   in the repository, on the site and in the bundle identifier, and the store
+   name reads the same to anyone scanning it.
 6. Primary Language: **English (U.S.)** — see the Identity section above for why
    this is not Portuguese
 7. Bundle ID: `com.monobit.CleanMenuBar`, which appears in the dropdown a few

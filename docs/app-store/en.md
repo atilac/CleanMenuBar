@@ -5,7 +5,7 @@ number, one binary, one set of changes, wherever someone finds the app.
 
 ## Name (30)
 
-CleanMenuBar
+CleanMenuBar: Hide Icons
 
 ## Subtitle (30)
 
