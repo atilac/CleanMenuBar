@@ -25,9 +25,9 @@ Trop d'icônes dans votre barre des menus ? CleanMenuBar masque celles que vous 
 
 FONCTIONNEMENT
 
-Deux éléments apparaissent dans votre barre : un séparateur fin « | » et une flèche « > ».
+Deux éléments apparaissent dans votre barre : un séparateur fin « | » et une flèche « › ».
 
-Maintenez ⌘ et faites glisser les icônes à masquer à gauche du séparateur « | ». Tout ce qui se trouve à sa droite reste visible en permanence. Cliquez sur la flèche « > » pour replier ou « < » pour déplier — ou appuyez sur ⌃⌥⌘C depuis n'importe où.
+Maintenez ⌘ et faites glisser les icônes à masquer à gauche du séparateur « | ». Tout ce qui se trouve à sa droite reste visible en permanence. Cliquez sur la flèche « › » pour replier ou « ‹ » pour déplier — ou appuyez sur ⌃⌥⌘C depuis n'importe où.
 
 Une fois tout en place, activez « Masquer les séparateurs » dans les réglages : seule la flèche reste à l'écran.
 

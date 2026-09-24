@@ -25,9 +25,9 @@ Zu viele Symbole in Ihrer Menüleiste? CleanMenuBar blendet aus, was Sie nicht s
 
 SO FUNKTIONIERT ES
 
-Zwei Objekte erscheinen in Ihrer Menüleiste: ein schmaler Trenner „|“ und ein Pfeil „>“.
+Zwei Objekte erscheinen in Ihrer Menüleiste: ein schmaler Trenner „|“ und ein Pfeil „›“.
 
-Halten Sie ⌘ gedrückt und ziehen Sie die auszublendenden Symbole links neben den Trenner „|“. Alles rechts davon bleibt dauerhaft sichtbar. Klicken Sie auf den Pfeil „>“ zum Einklappen oder „<“ zum Ausklappen — oder drücken Sie überall ⌃⌥⌘C.
+Halten Sie ⌘ gedrückt und ziehen Sie die auszublendenden Symbole links neben den Trenner „|“. Alles rechts davon bleibt dauerhaft sichtbar. Klicken Sie auf den Pfeil „›“ zum Einklappen oder „‹“ zum Ausklappen — oder drücken Sie überall ⌃⌥⌘C.
 
 Wenn alles angeordnet ist, aktivieren Sie in den Einstellungen „Trenner ausblenden“, und nur der Pfeil bleibt auf dem Bildschirm.
 

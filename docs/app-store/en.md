@@ -25,9 +25,9 @@ Too many icons in your menu bar? CleanMenuBar hides the ones you don't want to s
 
 HOW IT WORKS
 
-Two items appear in your menu bar: a thin separator "|" and an arrow ">".
+Two items appear in your menu bar: a thin separator "|" and an arrow "›".
 
-Hold ⌘ and drag the icons you want hidden to the left of the separator "|". Anything to the right of it stays visible at all times. Click the arrow ">" to collapse or "<" to expand — or press ⌃⌥⌘C from anywhere.
+Hold ⌘ and drag the icons you want hidden to the left of the separator "|". Anything to the right of it stays visible at all times. Click the arrow "›" to collapse or "‹" to expand — or press ⌃⌥⌘C from anywhere.
 
 Once everything is arranged, turn on "Hide the separators" in settings and only the arrow remains on screen.
 

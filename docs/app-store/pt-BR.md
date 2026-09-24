@@ -36,9 +36,9 @@ Sua barra de menus tem ícones demais? O CleanMenuBar esconde os que você não 
 
 COMO FUNCIONA
 
-Dois itens aparecem na sua barra: um separador fino "|" e uma seta ">".
+Dois itens aparecem na sua barra: um separador fino "|" e uma seta "›".
 
-Segure ⌘ e arraste os ícones que quer esconder para a esquerda do separador "|". O que ficar à direita dele permanece sempre visível. Clique na seta ">" para recolher ou "<" para expandir — ou pressione ⌃⌥⌘C de qualquer lugar.
+Segure ⌘ e arraste os ícones que quer esconder para a esquerda do separador "|". O que ficar à direita dele permanece sempre visível. Clique na seta "›" para recolher ou "‹" para expandir — ou pressione ⌃⌥⌘C de qualquer lugar.
 
 Depois de organizar tudo, ative "Ocultar os separadores" nos ajustes e só a seta continua na tela.
 

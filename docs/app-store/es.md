@@ -25,9 +25,9 @@ Oculta los iconos que no usas y muéstralos cuando los necesites. Sin permisos, 
 
 CÓMO FUNCIONA
 
-Aparecen dos elementos en tu barra: un separador fino "|" y una flecha ">".
+Aparecen dos elementos en tu barra: un separador fino "|" y una flecha "›".
 
-Mantén ⌘ y arrastra los iconos que quieras ocultar a la izquierda del separador "|". Todo lo que quede a su derecha permanece siempre visible. Haz clic en la flecha ">" para contraer o "<" para expandir — o pulsa ⌃⌥⌘C desde cualquier sitio.
+Mantén ⌘ y arrastra los iconos que quieras ocultar a la izquierda del separador "|". Todo lo que quede a su derecha permanece siempre visible. Haz clic en la flecha "›" para contraer o "‹" para expandir — o pulsa ⌃⌥⌘C desde cualquier sitio.
 
 Cuando lo tengas todo organizado, activa "Ocultar los separadores" en los ajustes y solo quedará la flecha en pantalla.
 
