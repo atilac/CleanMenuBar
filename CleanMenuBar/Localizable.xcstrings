@@ -3820,65 +3820,6 @@
         }
       }
     },
-    "macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the previous generation of menu bar apps. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width.": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the previous generation of menu bar apps. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O macOS 27 reconstruiu a barra de menus como uma única janela e descarta qualquer item de status que chegue à metade da largura do monitor — foi isso que quebrou a geração anterior de apps de barra de menus. O CleanMenuBar fica abaixo desse limite, então em um monitor muito largo o trecho oculto é limitado a metade da largura da tela mais estreita."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 reconstruyó la barra de menús como una sola ventana y descarta cualquier elemento de estado que alcance la mitad del ancho de la pantalla — eso fue lo que rompió la generación anterior de apps de barra de menús. CleanMenuBar se mantiene por debajo de ese límite, así que en una pantalla muy ancha el tramo oculto se limita a la mitad del ancho de la pantalla más estrecha."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27はメニューバーを単一のウインドウとして作り直し、ディスプレイ幅の半分に達したステータス項目を破棄します。これが前世代のメニューバーアプリを壊した原因です。CleanMenuBarはその上限内に収まるため、非常に 広いディスプレイでは非表示にできる範囲が最も狭い画面の幅の半分までに制限されます。"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 a reconstruit la barre des menus en une seule fenêtre et supprime tout élément d'état atteignant la moitié de la largeur de l'écran — c'est ce qui a cassé la génération précédente d'apps de barre des menus. CleanMenuBar reste sous cette limite : sur un écran très large, la portée masquée est donc plafonnée à la moitié de la largeur du plus étroit des écrans."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 将菜单栏重建为单一窗口，并会丢弃任何宽度达到屏幕一半的状态项——这正是上一代菜单栏 App 失效的原因。CleanMenuBar 始终低于该上限，因此在超宽显示器上，可隐藏的范围被限制为最窄屏幕宽度的一半。"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 hat die Menüleiste als einzelnes Fenster neu aufgebaut und verwirft jedes Statusobjekt, das die halbe Bildschirmbreite erreicht – genau daran ist die vorige Generation von Menüleisten-Apps gescheitert. CleanMenuBar bleibt unter dieser Grenze; auf einem sehr breiten Display ist der ausgeblendete Bereich daher auf die Hälfte der Breite des schmalsten Bildschirms begrenzt."
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 將選單列重建為單一視窗，並會捨棄任何寬度達到螢幕一半的狀態項目——這正是上一代選單列 App 失效的原因。CleanMenuBar 始終低於該上限，因此在超寬螢幕上，可隱藏的範圍會限制為最窄螢幕寬度的一半。"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "macOS 27 перестроил строку меню в одно окно и отбрасывает любой объект статуса, достигающий половины ширины экрана, — именно это сломало предыдущее поколение программ для строки меню. CleanMenuBar остаётся ниже этого предела, поэтому на очень широком мониторе скрываемая область ограничена половиной ширины самого узкого экрана."
-          }
-        }
-      }
-    },
     "macOS already uses this for **%@**. Both will happen when you press it — pick another combination.": {
       "extractionState": "manual",
       "localizations": {
@@ -4288,6 +4229,65 @@
           "stringUnit": {
             "state": "translated",
             "value": "monobit.com.br/cleanmenubar"
+          }
+        }
+      }
+    },
+    "macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the technique some apps used. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the technique some apps used. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O macOS 27 reconstruiu a barra de menus como uma única janela e descarta qualquer item de status que chegue à metade da largura do monitor — foi isso que quebrou a técnica que alguns apps usavam. O CleanMenuBar fica abaixo desse limite, então em um monitor muito largo o trecho oculto é limitado a metade da largura da tela mais estreita."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 reconstruyó la barra de menús como una sola ventana y descarta cualquier elemento de estado que alcance la mitad del ancho de la pantalla — eso fue lo que rompió la técnica que usaban algunas apps. CleanMenuBar se mantiene por debajo de ese límite, así que en una pantalla muy ancha el tramo oculto se limita a la mitad del ancho de la pantalla más estrecha."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27はメニューバーを単一のウインドウとして作り直し、ディスプレイ幅の半分に達したステータス項目を破棄します。一部のアプリが使っていた手法は、これによって動かなくなりました。CleanMenuBarはその上限内に収まるため、非常に広いディスプレイでは非表示にできる範囲が最も狭い画面の幅の半分までに制限されます。"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 a reconstruit la barre des menus en une seule fenêtre et supprime tout élément d'état atteignant la moitié de la largeur de l'écran — c'est ce qui a cassé la technique qu'utilisaient certaines apps. CleanMenuBar reste sous cette limite : sur un écran très large, la portée masquée est donc plafonnée à la moitié de la largeur du plus étroit des écrans."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 将菜单栏重建为单一窗口，并会丢弃任何宽度达到屏幕一半的状态项——这正是部分 App 所用技术失效的原因。CleanMenuBar 始终低于该上限，因此在超宽显示器上，可隐藏的范围被限制为最窄屏幕宽度的一半。"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 hat die Menüleiste als einzelnes Fenster neu aufgebaut und verwirft jedes Statusobjekt, das die halbe Bildschirmbreite erreicht – genau daran ist die Technik gescheitert, die einige Apps verwendeten. CleanMenuBar bleibt unter dieser Grenze; auf einem sehr breiten Display ist der ausgeblendete Bereich daher auf die Hälfte der Breite des schmalsten Bildschirms begrenzt."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 將選單列重建為單一視窗，並會捨棄任何寬度達到螢幕一半的狀態項目——這正是部分 App 所用技術失效的原因。CleanMenuBar 始終低於該上限，因此在超寬螢幕上，可隱藏的範圍會限制為最窄螢幕寬度的一半。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 27 перестроил строку меню в одно окно и отбрасывает любой объект статуса, достигающий половины ширины экрана, — именно это сломало приём, которым пользовались некоторые программы. CleanMenuBar остаётся ниже этого предела, поэтому на очень широком мониторе скрываемая область ограничена половиной ширины самого узкого экрана."
           }
         }
       }

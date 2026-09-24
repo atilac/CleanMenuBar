@@ -11,7 +11,12 @@ permissions:
 jobs:
   release:
     name: Build, sign and publish
-    runs-on: macos-27
+    # `xcode-27`, not `macos-27`: the latter does not exist, and GitHub queues a
+    # job for an unknown label indefinitely instead of failing it. This image runs
+    # macOS 27 and is the only one shipping the macOS 27 SDK, which a 27.0
+    # deployment target needs. It is marked preview — if it misbehaves, the fault
+    # is likelier there than in this project.
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v4
 

@@ -277,7 +277,7 @@ struct HowItWorksView: View {
                 Divider()
 
                 Text("macOS 27 note").font(.headline)
-                Text("macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the previous generation of menu bar apps. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width.")
+                Text("macOS 27 rebuilt the menu bar as a single window and drops any status item that grows to half the display width — which is what broke the technique some apps used. CleanMenuBar stays under that limit, so on a very wide display the hidden span is capped at half the narrowest screen's width.")
                     .foregroundStyle(.secondary)
                     .font(.callout)
             }
