@@ -8,6 +8,7 @@ Kept here so the answers stay consistent between submissions.
 | Field | Value |
 |---|---|
 | Seller / legal entity | MONOBIT (ATILA VITAL CAVALCANTE DA SILVA LTDA) |
+| Company Name (macOS listing) | Monobit |
 | Team ID | NP9YTUN8LD |
 | Bundle ID | com.monobit.CleanMenuBar |
 | **Primary language** | **English (U.S.)** |
@@ -195,15 +196,21 @@ and the dropdown in step 4 simply comes up empty without it.
 1. Open <https://appstoreconnect.apple.com/apps>
 2. **+** › **New App**
 3. Platforms: **macOS** only
-4. Name: `CleanMenuBar` — this has to be unique across the whole store, so an
+4. Company Name: `Monobit` — this field appears only for macOS apps. It is the
+   name the Mac App Store shows on the product page, and it does not have to be
+   the registered entity: the full legal name reaches buyers through the seller
+   information, which comes from the account rather than from here. Worth
+   getting right the first time, since changing it later tends to mean a support
+   request rather than a free edit.
+5. Name: `CleanMenuBar` — this has to be unique across the whole store, so an
    error here means the name is taken and the listing needs a different one
-5. Primary Language: **English (U.S.)** — see the Identity section above for why
+6. Primary Language: **English (U.S.)** — see the Identity section above for why
    this is not Portuguese
-6. Bundle ID: `com.monobit.CleanMenuBar`, which appears in the dropdown a few
+7. Bundle ID: `com.monobit.CleanMenuBar`, which appears in the dropdown a few
    minutes after step 3
-7. SKU: `cleanmenubar` — internal only, never shown to anyone
-8. User Access: **Full Access**
-9. **Create**
+8. SKU: `cleanmenubar` — internal only, never shown to anyone
+9. User Access: **Full Access**
+10. **Create**
 
 ### 5. Build and upload
 
