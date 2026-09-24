@@ -138,29 +138,92 @@ mid-onboarding with the login suggestion card still up.
 
 ## Remaining steps
 
-Two certificates and an app record are all that stand between here and an
-upload. Everything else is built and verified.
+Checked against the App Store Connect API on 2026-09-24: the team holds one
+certificate (Developer ID Application, expiring 2031-09-16), has **no
+registered App IDs**, and **no app records**. So all four steps below are
+outstanding, in this order — step 4 cannot be done before step 3.
 
-1. **Apple Distribution certificate** — at developer.apple.com, Certificates ›
-   `+` › *Apple Distribution*, upload
-   `~/Developer/CleanMenuBar-signing/appleDistribution.csr`. Download the `.cer`
-   and double-click it.
-2. **Mac Installer Distribution certificate** — same place, *Mac Installer
-   Distribution*, upload
-   `~/Developer/CleanMenuBar-signing/macInstaller.csr`. This one signs the
-   `.pkg`, not the app; without it the package is unsigned and the upload fails.
-3. **App record** — App Store Connect › Apps › `+`, platform **macOS**, primary
-   language **English (U.S.)**, bundle ID `com.atilac.CleanMenuBar`, SKU
-   `cleanmenubar`.
-4. **Build the package** — `Tools/build-appstore-pkg.sh`. It refuses to run
-   until both certificates are in the keychain, so a missing one fails loudly
-   rather than producing a package that dies at upload.
-5. **Upload** — `xcrun altool --upload-app -t macos -f dist/CleanMenuBar.pkg
-   --apiKey ABX25DD23T --apiIssuer <issuer id>`, with `AuthKey_ABX25DD23T.p8`
-   in `~/.appstoreconnect/private_keys/`.
-6. **Fill the listing** — text from `docs/app-store/<locale>.md`, screenshots
-   from `docs/app-store/screenshots/<locale>/`, URLs and questionnaire answers
-   from this file.
+### A note that applies to both certificates
+
+The CSRs here were generated with `openssl`, which means the private key sits in
+a file rather than in the keychain. This matters: downloading the `.cer` and
+double-clicking it installs a certificate with no matching key, and an identity
+without its key cannot sign anything — `security find-identity` will not list
+it, and the build script's check will keep failing with the certificate
+apparently installed.
+
+The fix is the same one used for the Developer ID certificate: pair the
+downloaded `.cer` with its `.key` into a `.p12` and import that. Download both
+`.cer` files, leave them in `~/Downloads`, and run the pairing below.
+
+### 1. Apple Distribution certificate
+
+1. Open <https://developer.apple.com/account/resources/certificates/list>
+2. Click **+**
+3. Under *Software*, choose **Apple Distribution** — the description reads "Sign
+   your apps for submission to the App Store or for Ad Hoc distribution". Do not
+   pick *Developer ID Application*; that one is already here and is for
+   distribution outside the store.
+4. **Continue** › **Choose File** › `~/Developer/CleanMenuBar-signing/appleDistribution.csr`
+   (in the file dialog, ⇧⌘G pastes a path)
+5. **Continue** › **Download**. It lands as `distribution.cer`.
+
+### 2. Mac Installer Distribution certificate
+
+Same page, same **+**, but choose **Mac Installer Distribution** — "This
+certificate is used to sign your app's Installer Package for submission to the
+Mac App Store". Upload
+`~/Developer/CleanMenuBar-signing/macInstaller.csr` and download the `.cer`.
+
+This one signs the package, not the app. Both are required: the app is signed
+with Apple Distribution, wrapped in a `.pkg`, and the `.pkg` is signed with this.
+
+### 3. Register the App ID
+
+App Store Connect will not offer a bundle ID that is not registered here first,
+and the dropdown in step 4 simply comes up empty without it.
+
+1. Open <https://developer.apple.com/account/resources/identifiers/list>
+2. **+** › **App IDs** › **Continue** › type **App** › **Continue**
+3. Description: `CleanMenuBar`
+4. Bundle ID: **Explicit**, `com.atilac.CleanMenuBar`
+5. Capabilities: leave every box unchecked. App Sandbox is declared in the
+   entitlements file, not here, and the app uses nothing that needs enabling.
+6. **Continue** › **Register**
+
+### 4. Create the app record
+
+1. Open <https://appstoreconnect.apple.com/apps>
+2. **+** › **New App**
+3. Platforms: **macOS** only
+4. Name: `CleanMenuBar` — this has to be unique across the whole store, so an
+   error here means the name is taken and the listing needs a different one
+5. Primary Language: **English (U.S.)** — see the Identity section above for why
+   this is not Portuguese
+6. Bundle ID: `com.atilac.CleanMenuBar`, which appears in the dropdown a few
+   minutes after step 3
+7. SKU: `cleanmenubar` — internal only, never shown to anyone
+8. User Access: **Full Access**
+9. **Create**
+
+### 5. Build and upload
+
+Once both certificates are in the keychain and the record exists:
+
+```sh
+CMB_BUILD=4 Tools/build-appstore-pkg.sh
+xcrun altool --upload-app -t macos -f dist-appstore/CleanMenuBar.pkg \
+  --apiKey ABX25DD23T --apiIssuer 0f395b89-aeaf-403e-ad15-c3d5558be79b
+```
+
+`altool` reads the key from `~/.appstoreconnect/private_keys/`, which does not
+exist yet; `AuthKey_ABX25DD23T.p8` has to be copied there first.
+
+### 6. Fill the listing
+
+Text from `docs/app-store/<locale>.md`, screenshots from
+`docs/app-store/screenshots/<locale>/`, URLs and questionnaire answers from the
+top of this file.
 
 ## What still has to be decided
 
